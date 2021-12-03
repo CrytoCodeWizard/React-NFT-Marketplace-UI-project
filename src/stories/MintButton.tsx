@@ -31,7 +31,6 @@ export const MintButton = ({
   size = 'medium',
   backgroundColor,
   label,
-  ...props
 }: ButtonProps) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
@@ -39,7 +38,6 @@ export const MintButton = ({
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       style={{ backgroundColor }}
-      {...props}
     >
       {label}
     </button>
