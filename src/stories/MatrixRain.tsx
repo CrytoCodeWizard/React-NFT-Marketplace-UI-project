@@ -26,8 +26,8 @@ const MatrixRain = ({ title, text, variant, isPrimary }: MatrixRainProps) => {
     React.useEffect(() => {
 
         var midiv = document.getElementById("bg");
-        var c = document.getElementById("canvas");
-        var ctx = c.getContext("2d");
+        var c: any = document.getElementById("canvas");
+        var ctx: any = c.getContext("2d");
 
         //making the canvas full screen
         c.height = window.innerHeight - 300;
@@ -35,14 +35,14 @@ const MatrixRain = ({ title, text, variant, isPrimary }: MatrixRainProps) => {
 
 
        //english characters
-        var english = "1001010101110101010101010010101000101011101111010101010110101010101010101110000101";
+        var english: any = "1001010101110101010101010010101000101011101111010101010110101010101010101110000101";
         //converting the string into an array of single characters
         english = english.split("");
 
         var font_size = 42;
         var columns = c.width / font_size; //number of columns for the rain
         //an array of drops - one per column
-        var drops = [];
+        var drops: any = [];
         //x below is the x coordinate
         //1 = y co-ordinate of the drop(same for every drop initially)
         for (var x = 0; x < columns; x++)
