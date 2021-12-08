@@ -63,32 +63,3 @@ const Cards = ({ imageSrc, alt, altImg, typographyAlign, typographyVariant, typo
 };
 
 export default Cards;
-
-
-
-/**
- * 
- * <Card>
-            <CardMedia
-            height={"100%"}
-            component={"img"}
-            image={errorLoading ? altImg : imageSrc}
-            alt={alt}
-            onError={ () => setErrorLoading(true)}
-            />
-            <CardContent sx={{ flexGrow: 1 }}>
-                <Typography 
-                gutterBottom 
-                variant={typographyVariant} 
-                component={typographyComponent}
-                align={typographyAlign}
-                >
-                    {typographyText}
-                </Typography>
-
-            </CardContent>
-        </Card>
- * 
- * 
- * 
- */
