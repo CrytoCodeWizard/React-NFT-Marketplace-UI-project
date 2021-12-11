@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import FeaturedSection from './FeaturedSection';
+import { FeaturedSection } from './FeaturedSection';
 import cssProps from "../cssProps.json"
 
 export default {

@@ -26,7 +26,7 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const MintButton = ({
+ export const MintButton = ({
   primary = false,
   size = 'medium',
   backgroundColor,

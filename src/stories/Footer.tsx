@@ -6,30 +6,30 @@ interface FooterProps {
     /**
      * Name of website
      */
-  website: string;
+    website: string;
     /**
      * Name of twitter account
      */
-  twitter: string;
+    twitter: string;
     /**
      * Text inside Footer
      */
-  text: string;
+    text: string;
 
-  variant: any;
+    variant: any;
 
-  isPrimary: boolean;
+    isPrimary: boolean;
 
 }
 
-const Footer = ({website, twitter, text, variant, isPrimary}: FooterProps) => {
+export const Footer = ({ website, twitter, text, variant, isPrimary }: FooterProps) => {
 
     const Copyright = () => {
         return (
             <Typography variant={variant} color={`text.${isPrimary ? "primary" : "secondary"}`} align="center">
                 {'Copyright © '}
                 <Link color="inherit" href="/">
-                   {website}
+                    {website}
                 </Link>{' '}
                 {new Date().getFullYear()}
                 {'.'}
@@ -54,5 +54,3 @@ const Footer = ({website, twitter, text, variant, isPrimary}: FooterProps) => {
         </Box>
     )
 };
-
-export default Footer;

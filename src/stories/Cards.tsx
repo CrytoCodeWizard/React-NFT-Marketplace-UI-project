@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react"
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -15,7 +15,7 @@ interface CardsProps {
     /**
      * Fallback Image
      */
-    altImg : string;
+    altImg: string;
     /**
      * Card subheader align
      */
@@ -35,24 +35,24 @@ interface CardsProps {
 
 }
 
-const Cards = ({ imageSrc, alt, altImg, typographyAlign, typographyVariant, typographyComponent, typographyText, }: CardsProps) => {
+export const Cards = ({ imageSrc, alt, altImg, typographyAlign, typographyVariant, typographyComponent, typographyText, }: CardsProps) => {
     const [errorLoading, setErrorLoading] = useState(false)
-   
+
     return (
-        <div>  
+        <div>
             <CardMedia
-            height={"100%"}
-            component={"img"}
-            image={errorLoading ? altImg : imageSrc}
-            alt={alt}
-            onError={ () => setErrorLoading(true)}
+                height={"100%"}
+                component={"img"}
+                image={errorLoading ? altImg : imageSrc}
+                alt={alt}
+                onError={() => setErrorLoading(true)}
             />
             <CardContent sx={{ flexGrow: 1 }}>
-                <Typography 
-                gutterBottom 
-                variant={typographyVariant} 
-                component={typographyComponent}
-                align={typographyAlign}
+                <Typography
+                    gutterBottom
+                    variant={typographyVariant}
+                    component={typographyComponent}
+                    align={typographyAlign}
                 >
                     {typographyText}
                 </Typography>
@@ -62,4 +62,3 @@ const Cards = ({ imageSrc, alt, altImg, typographyAlign, typographyVariant, typo
     )
 };
 
-export default Cards;

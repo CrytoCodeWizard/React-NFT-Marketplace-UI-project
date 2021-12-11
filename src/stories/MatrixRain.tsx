@@ -21,7 +21,7 @@ interface MatrixRainProps {
 }
 
 
-const MatrixRain = ({ title, text, variant, isPrimary }: MatrixRainProps) => {
+export const MatrixRain = ({ title, text, variant, isPrimary }: MatrixRainProps) => {
 
     React.useEffect(() => {
 
@@ -85,5 +85,3 @@ const MatrixRain = ({ title, text, variant, isPrimary }: MatrixRainProps) => {
 
     )
 };
-
-export default MatrixRain;

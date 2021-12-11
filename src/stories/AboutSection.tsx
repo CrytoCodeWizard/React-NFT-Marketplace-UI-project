@@ -29,7 +29,7 @@ interface AboutSection {
     subHeadline_2_Text: string;
 }
 
-const AboutSection = ({sectionId, headlineText, subHeadline_1_Text, textBlockText, subHeadline_2_Text}: AboutSection) => {
+export const AboutSection = ({sectionId, headlineText, subHeadline_1_Text, textBlockText, subHeadline_2_Text}: AboutSection) => {
     return (
         <Box
             sx={{
@@ -71,4 +71,3 @@ const AboutSection = ({sectionId, headlineText, subHeadline_1_Text, textBlockTex
     )
 }
 
-export default AboutSection

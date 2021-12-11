@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import cssProps from "../cssProps.json"
-import Cards from './Cards';
+import { Cards } from './Cards';
 
 export default {
   title: 'Example/Cards',

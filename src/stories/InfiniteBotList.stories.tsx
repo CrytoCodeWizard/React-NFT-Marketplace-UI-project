@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import InfiniteBotList from './InfiniteBotList';
+import { InfiniteBotList } from './InfiniteBotList';
 
 export default {
   title: 'Iotabots/InfiniteBotList',

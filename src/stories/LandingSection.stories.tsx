@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import LandingSection from './LandingSection';
+import { LandingSection } from './LandingSection';
 
 export default {
   title: 'Example/LandingSection',
