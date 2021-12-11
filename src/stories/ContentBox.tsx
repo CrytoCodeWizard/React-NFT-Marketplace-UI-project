@@ -11,47 +11,79 @@ interface ContentBoxProps {
      */
     text: string;
 
+    /**
+     * Check if image is used
+     */
+    hasImage: boolean;
      /**
      * Source image
      */
     imageSource: string;
 
     /**
-     * Size of the image
+     * Size of the image (px)
      */
      imageSize: number;
 
+    /**
+     * Color background
+     */
+     backgroundColor: string;
 
-    isPrimary: boolean;
+    /**
+     * Color background headline
+     */
+     headerBackgroundColor: string;
+    /**
+     * Height topbar
+     */
+     topBarHeight: string;
+     /**
+     * MarginLeft topbar
+     */
+     topBarMarginLeft: string;
+     /**
+      * Margin bottom textblock
+      */
+     textMarginBottom: string;
 
+     /**
+      * Margin left textblock
+      */
+     textMarginLeft: string;
+     /**
+      * Margin right textblock
+      */
+     textMarginRight: string;
+
+     /**
+      * Padding text/image in px
+      */
+      textPaddingImage: number;
+     /**
+      * Breaktpoint (px)
+      */
+      breakPoint: number;
+
+    /**
+    * Size of edge bottom right (in px)
+    */
+    edgeRightBottomSize: number;
 }
 
 const Container = styled.div({
     width: "100%",
-   // margin: "5px"
- //  display: "flex",
 });
 
 const TopMargin = styled.div({
     height: "0",
-    marginLeft: "75px",
-    borderBottom: "20px solid black",
-    borderLeft: "20px solid transparent",
     display: "flex",
     flexDirection: "row-reverse",
-})
-
-const HeaderTopMargin = styled.div({
-    height: "0",
-  //  marginLeft: "px",
-    borderBottom: "20px solid red",
-    borderLeft: "20px solid transparent",
-})
+}) 
 
 const HeaderContainer = styled.div({
     display: "flex",
     flexDirection: "row",
-   // width: "100%"
 })  
 
 const LeftSideContainer = styled.div({
@@ -65,10 +97,9 @@ const RightSideContainer = styled.div({
 })
 
 const Headline = styled.h1({
-    background: 'red',
     height: "100%",
     margin: "0px",
-    paddingTop: "15px",
+    paddingTop: "10px",
     paddingLeft: "10px",
     paddingBottom: "10px",
     display:"table",
@@ -77,21 +108,17 @@ const Headline = styled.h1({
 const Rectangle = styled.div({
     width: "0",
     height: "0",
-    borderBottom: "20px solid red",
     borderLeft: "20px solid transparent",
 })
 
 const Rectangle2 = styled.div({
     width: "0",
     height: "0",
-    borderTop: "20px solid red",
-    borderRight: "20px solid black",
 })
 
 const Rectangle3 = styled.div({
     width: "inherit",
     height: "inherit",
-    overflow: "hidden",
 })
 
 const MarginMiddle = styled.div({
@@ -100,11 +127,11 @@ const MarginMiddle = styled.div({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "black",
 })
 
 const TextBlockContainer = styled.div({
     display: "flex",
+    minHeight: "75px",
     flexDirection: "row"
 })
 
@@ -114,50 +141,67 @@ const Image = styled.img({
 
 const Image2 = styled.img({
     marginTop: "10px",
+    maxWidth:"100%"
 })
 
 
-
-const ContentBox = ({ title, text, imageSource, imageSize }: ContentBoxProps) => {
-
-    const [hasImage, setHasImage] = useState(false)
-    const [width, setWidth] = useState<number>(() => 0)
-
-    const _BREAK_POINT = 620
+const ContentBox = ({ 
+    title, 
+    text,
+    hasImage,
+    imageSource,
+    imageSize, 
+    backgroundColor,
+    headerBackgroundColor,
+    topBarHeight, 
+    topBarMarginLeft,
+    textMarginBottom,
+    textMarginRight,
+    textMarginLeft,
+    textPaddingImage,
+    breakPoint,
+    edgeRightBottomSize,
+}: ContentBoxProps) => {
+    const [width, setWidth] = useState<number>(window.innerWidth)
 
     useEffect(() => {
-        console.log(window.innerWidth)
-        setWidth(window.innerWidth)
-    },[])
-
-
+        function handleResize() {
+            setWidth(window.innerWidth)
+        }
+    
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
+      
     return (
         <Container>
-            <TopMargin>
-               {(hasImage && width > _BREAK_POINT) && <Image style={{width: `${imageSize}px`, height: `${imageSize}px`}} src={imageSource}  />}
+            <TopMargin style={{borderBottom:`${topBarHeight} solid ${backgroundColor}`,borderLeft:`${topBarHeight} solid transparent`,marginLeft:`${topBarMarginLeft}`}}>
+               {(hasImage && width > breakPoint ) && <Image style={{width: `${imageSize}px`, height: `${imageSize}px`}} src={imageSource}  />}
             </TopMargin>
             <HeaderContainer>
                 <LeftSideContainer>
-                    <Rectangle />
-                    <div style={{width: "100%", height: "100%", backgroundColor: "red"}}></div>
+                    <Rectangle style={{borderBottom: `20px solid ${headerBackgroundColor}`}} />
+                    <div style={{width: "100%", height: "100%", backgroundColor: `${headerBackgroundColor}`}}></div>
                 </LeftSideContainer>
-                <Headline>{title}</Headline>
+                <Headline style={{background: `${headerBackgroundColor}`}}>{title}</Headline>
                 <RightSideContainer>
-                    <Rectangle2 />
-                    <div style={{width: "100%", height: "100%", backgroundColor: "red"}}></div>
+                    <Rectangle2 style={{ borderRight: `20px solid ${backgroundColor}`,borderTop: `20px solid ${headerBackgroundColor}`}}/>
+                    <div style={{width: "100%", height: "100%", backgroundColor: `${headerBackgroundColor}`}}></div>
                 </RightSideContainer>
-                <div style={{ flexGrow: "1", minWidth: "10px",backgroundColor: "black"}}></div>
+                <div style={{ flexGrow: "1", minWidth: "10px",backgroundColor: `${backgroundColor}`}}></div>
             </HeaderContainer>
-            <MarginMiddle >
-                {(hasImage &&  width < _BREAK_POINT) && <Image2 style={{width: `${imageSize}px`, height: `${imageSize}px`}} src={imageSource}  />}
+            <MarginMiddle style={{backgroundColor:  `${backgroundColor}`}} >
+                {(hasImage &&  width < breakPoint) && <Image2 style={{width: `${imageSize}px`, height: `${imageSize}px`}} src={imageSource}  />}
             </MarginMiddle>
             <TextBlockContainer>
-                <div style={{width:"100%", backgroundColor: "black"}}>
-                    <p style={{marginRight: `${hasImage ? ( (width < _BREAK_POINT)  ? "10px" :   imageSize-50 +10 ) : "10px"}px`,  color:"white",textAlign: "justify", marginLeft: "10px", marginBottom: "15px"}}>{text}</p>
+                <div style={{width:"100%", backgroundColor: `${backgroundColor}`}}>
+                    <p style={{
+                           marginRight: `${hasImage ? ( (width < breakPoint)  ?  `${textMarginRight}` :   `${imageSize-edgeRightBottomSize + textPaddingImage}px` ) :  `${textMarginRight}`}`, 
+                           color:"white",textAlign: "justify", marginLeft:  `${textMarginLeft}`, marginBottom: `${textMarginBottom}`}}>{text}</p>
                 </div>
                 <div style={{display: "flex", flexDirection: "column"}}>
-                    <div style={{flexGrow: 1, backgroundColor: "black"}}></div>
-                    <Rectangle3 style={{borderTop: `50px solid black`, borderRight: `50px solid transparent`,}}/>
+                    <div style={{flexGrow: 1, backgroundColor: `${backgroundColor}`}}></div>
+                    <Rectangle3 style={{borderTop: `${edgeRightBottomSize}px solid ${backgroundColor}`, borderRight: `${edgeRightBottomSize}px solid transparent`,}}/>
                 </div>
             </TextBlockContainer>
         </Container>
@@ -165,31 +209,3 @@ const ContentBox = ({ title, text, imageSource, imageSize }: ContentBoxProps) =>
 };
 
 export default ContentBox;
-
-
-
-
-{/**
-      <Image style={{width: `${imageSize}px`, height: `${imageSize}px`}} src={imageSource}  />
-
-  <HeaderContainer>
-                <div style={{width: "100%", display: "flex", flexDirection: "row"}}>
-                    <Rectangle ></Rectangle>
-                    <div style={{backgroundColor: "red"}}></div>
-                </div>
-                <div>
-                    <div>
-                        <Headline>WHAT IS AN IOTABOT?</Headline>
-                    </div>
-                    <div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div></div>
-            </HeaderContainer>
-            <TextBoxContainer>
-
-            </TextBoxContainer>
-
-*/}
