@@ -145,7 +145,7 @@ const Image2 = styled.img({
 })
 
 
-const ContentBox = ({ 
+export const ContentBox = ({ 
     title, 
     text,
     hasImage,
@@ -207,5 +207,3 @@ const ContentBox = ({
         </Container>
     )
 };
-
-export default ContentBox;

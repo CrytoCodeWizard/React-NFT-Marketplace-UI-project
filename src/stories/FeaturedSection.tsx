@@ -50,7 +50,7 @@ const Header = styled.div({
 });
 
 
-const FeaturedSection = ({ title, text, variant, isPrimary }: FeaturedSectionProps) => {
+export const FeaturedSection = ({ title, text, variant, isPrimary }: FeaturedSectionProps) => {
 
 
 
@@ -74,5 +74,3 @@ const FeaturedSection = ({ title, text, variant, isPrimary }: FeaturedSectionPro
         </Box>
     )
 };
-
-export default FeaturedSection;

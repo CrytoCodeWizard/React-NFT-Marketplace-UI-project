@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import MatrixRain from './MatrixRain';
+import { MatrixRain } from './MatrixRain';
 import cssProps from "../cssProps.json"
 
 export default {

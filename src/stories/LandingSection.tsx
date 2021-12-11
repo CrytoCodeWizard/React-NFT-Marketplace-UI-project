@@ -1,20 +1,20 @@
-import BackgroundVideo from './BackgroundVideo'
+import { BackgroundVideo } from './BackgroundVideo'
 import CssBaseline from '@mui/material/CssBaseline';
 import { styled } from '@mui/system';
 
 interface LandingSectionProps {
-    videoSource:any;
-    blur:number;  
+    videoSource: any;
+    blur: number;
     onClick: Function;
     title: string;
     subText: string;
     buttonText: string;
 }
 
-const LandingSection = ({ 
-    videoSource, 
-    blur, 
-    onClick, 
+export const LandingSection = ({
+    videoSource,
+    blur,
+    onClick,
     title,
     subText,
     buttonText,
@@ -37,7 +37,3 @@ const LandingSection = ({
         </BackgroundVideo>
     )
 }
-
-
-
-export default LandingSection

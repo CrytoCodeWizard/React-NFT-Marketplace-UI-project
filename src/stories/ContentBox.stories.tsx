@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import ContentBox from './ContentBox';
+import { ContentBox } from './ContentBox';
 import cssProps from "../cssProps.json"
 
 export default {

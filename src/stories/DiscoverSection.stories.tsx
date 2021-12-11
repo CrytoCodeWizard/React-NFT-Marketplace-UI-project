@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import DiscoverSection from './DiscoverSection';
+import { DiscoverSection } from './DiscoverSection';
 import cssProps from "../cssProps.json"
 
 export default {

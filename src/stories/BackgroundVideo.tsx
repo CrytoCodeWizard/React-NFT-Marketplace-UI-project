@@ -16,7 +16,7 @@ interface BackgroundVideoProps {
     blur:any;  
 }
 
-const BackgroundVideo = ({ videoSource, children, blur }: BackgroundVideoProps) => {
+export const BackgroundVideo = ({ videoSource, children, blur }: BackgroundVideoProps) => {
     return (
         <>
       <Wrapper style={{color: "white"}} >
@@ -65,7 +65,5 @@ const VideoOverlay = styled('div')({
   color: "inherit"
 })
 
-
-export default BackgroundVideo
 
 
