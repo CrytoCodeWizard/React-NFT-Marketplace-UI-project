@@ -1,6 +1,6 @@
 {
   "name": "@iotabots/react-nft-components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./build/index.js",
   "module": "./build/index.es.js",
   "dependencies": {
@@ -26,6 +26,7 @@
   },
   "scripts": {
     "test": "react-scripts test",
+    "dev": "start-storybook -p 6006 -s public",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "build": "rollup -c"
