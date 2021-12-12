@@ -44,7 +44,7 @@ export const DiscoverSection = ({NavLinkChild}: DiscoverSectionProps) => {
                                             // 16:9
                                             // pt: '56.25%',
                                         }}
-                                        image={`http://assets.iotabots.io/${index + 1}.png`}
+                                        image={`https://assets.iotabots.io/${index + 1}.png`}
                                         alt="IOTABOT"
                                     />
                                     <CardContent sx={{ flexGrow: 1 }}>

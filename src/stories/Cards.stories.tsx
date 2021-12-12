@@ -22,9 +22,9 @@ const Template: ComponentStory<typeof Cards> = (args) => <Cards {...args} />;
 
 export const Iotabots = Template.bind({});
 Iotabots.args = {
-    imageSrc: "http://assets.iotabots.io/1.png",
+    imageSrc: "https://assets.iotabots.io/1.png",
     alt: "IOTABOTS",
-    altImg: "http://assets.iotabots.io/1000.png",
+    altImg: "https://assets.iotabots.io/1000.png",
     typographyAlign: "center",
     typographyComponent: "h3",
     typographyVariant: "h6",
