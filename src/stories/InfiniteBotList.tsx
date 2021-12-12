@@ -27,8 +27,8 @@ export const InfiniteBotList = ({ }: InfiniteBotListProps) => {
                 <Grid item key={index} xs={12} sm={6} md={4}>
                     <Cards
                         alt="IOTABOTS"
-                        altImg="http://assets.iotabots.io/1000.png"
-                        imageSrc={`http://assets.iotabots.io/${index + 1}.png`}
+                        altImg="https://assets.iotabots.io/1000.png"
+                        imageSrc={`https://assets.iotabots.io/${index + 1}.png`}
                         typographyAlign="center"
                         typographyComponent="h3"
                         typographyText={`IOTABOT ${index + 1}`}
@@ -67,8 +67,8 @@ const Div = styled('div')({
                     <Grid item key={index} xs={12} sm={6} md={4}>
                         <Cards
                             alt="IOTABOTS"
-                            altImg="http://assets.iotabots.io/1000.png"
-                            imageSrc={`http://assets.iotabots.io/${index+1}.png`}
+                            altImg="https://assets.iotabots.io/1000.png"
+                            imageSrc={`https://assets.iotabots.io/${index+1}.png`}
                             typographyAlign="center"
                             typographyComponent="h3"
                             typographyText={`IOTABOT ${index+1}`}
