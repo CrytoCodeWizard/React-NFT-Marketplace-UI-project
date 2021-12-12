@@ -31,8 +31,8 @@ export const BotSearch = ({ placeholder }: BotSearchProps) => {
                 <div>
                     <Cards
                         alt="IOTABOTS"
-                        altImg="http://assets.iotabots.io/1000.png"
-                        imageSrc={`http://assets.iotabots.io/${number}.png`}
+                        altImg="https://assets.iotabots.io/1000.png"
+                        imageSrc={`https://assets.iotabots.io/${number}.png`}
                         typographyAlign="center"
                         typographyComponent="h3"
                         typographyText={`IOTABOT #${number}`}
