@@ -31,6 +31,7 @@ Iotabots.args = {
     textMarginBottom: "30px",
     textMarginRight: "10px",
     textMarginLeft: "10px",
+    textPaddingImage: 10,
     breakPoint: 620,
     edgeRightBottomSize: 50,
 }
