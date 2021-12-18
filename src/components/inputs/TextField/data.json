@@ -1,0 +1,36 @@
+{
+  "hierarchy": {
+    "title": "Segment",
+    "children": false,
+    "data": [
+      {
+        "type": "segment",
+        "title": 1,
+        "identifier": 1,
+        "children": [],
+        "selected": true
+      },
+      {
+        "type": "segment",
+        "title": 2,
+        "identifier": 2,
+        "children": [],
+        "selected": false
+      },
+      {
+        "type": "segment",
+        "title": 3,
+        "identifier": 3,
+        "children": [],
+        "selected": false
+      },
+      {
+        "type": "segment",
+        "title": 4,
+        "identifier": 4,
+        "children": [],
+        "selected": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+node_module/*
+
+public/dist/*
+
+# Ignore test files
+**/__mocks__/**
+*.test.tsx
+
+storybook-static/*
+fix-eslint.js
