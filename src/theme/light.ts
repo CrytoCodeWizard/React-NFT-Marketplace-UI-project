@@ -9,23 +9,23 @@ const COLOR_COMMON_WHITE = '#ffffff'
 const COLOR_COMMON_BLACK = '#000000'
 const COLOR_COMMON_TRANSPARENT = '#00000000'
 
-const COLOR_GREY_50 = '#f6f8fc'
-const COLOR_GREY_100 = '#e8eefb'
-const COLOR_GREY_200 = '#e0e4ed'
-const COLOR_GREY_300 = '#b8c2d6'
-const COLOR_GREY_400 = '#b0bfd9'
-const COLOR_GREY_500 = '#909fbe'
-const COLOR_GREY_600 = '#677695'
-const COLOR_GREY_700 = '#485776'
-const COLOR_GREY_800 = '#293858'
-const COLOR_GREY_900 = '#131f37'
-const COLOR_GREY_1000 = '#0d1424'
+const COLOR_GREY_50 = '#fcfcfc'
+const COLOR_GREY_100 = '#dadbdc'
+const COLOR_GREY_200 = '#b9babc'
+const COLOR_GREY_300 = '#989a9c'
+const COLOR_GREY_400 = '#78797c'
+const COLOR_GREY_500 = '#58595B'
+const COLOR_GREY_600 = '#48494b'
+const COLOR_GREY_700 = '#38393a'
+const COLOR_GREY_800 = '#28292a'
+const COLOR_GREY_900 = '#191919'
+const COLOR_GREY_1000 = '#090909'
 
-const COLOR_PRIMARY_LIGHTER = '#f5c9ab'
-const COLOR_PRIMARY_LIGHT = '#eda674'
-const COLOR_PRIMARY_MAIN = '#e4833e'
-const COLOR_PRIMARY_DARK = '#c56521'
-const COLOR_PRIMARY_DARKER = '#613313'
+const COLOR_PRIMARY_LIGHTER = '#ACEAD7'
+const COLOR_PRIMARY_LIGHT = '#59D5B0'
+const COLOR_PRIMARY_MAIN = '#03BF87'
+const COLOR_PRIMARY_DARK = '#027E59'
+const COLOR_PRIMARY_DARKER = '#013F2D'
 
 const COLOR_ERROR_LIGHT = '#fba69e'
 const COLOR_ERROR_MAIN = '#f67367'
@@ -133,8 +133,8 @@ const palette = {
 // --------------------------------------------
 // T Y P O G R A P H Y
 // ------------------
-const FONT_FAMILY_HEADLINE = 'Lato'
-const FONT_FAMILY_BODY = 'Lato'
+const FONT_FAMILY_HEADLINE = 'Press Start 2P'
+const FONT_FAMILY_BODY = 'Press Start 2P'
 
 const FONT_WEIGHT_HEADLINE = 800
 const FONT_WEIGHT_BODY = 400
