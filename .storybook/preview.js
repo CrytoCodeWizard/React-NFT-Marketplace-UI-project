@@ -1,20 +1,37 @@
-// .storybook/preview.js
+import { theme as darkTheme } from '../src/theme/dark'
+import { theme as lightTheme } from '../src/theme/light'
+import { StyledEngineProvider} from '@mui/material/styles'
+import { ThemeProvider } from '../src/theme/ThemeProvider'
+import { addDecorator } from '@storybook/react'
+import { withThemes } from '@react-theming/storybook-addon'
 
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { ThemeProvider as Emotion10ThemeProvider } from 'emotion-theming';
+export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/
+    }
+  },
+  options: {
+    storySort: {
+      order: ['👋 Get started', 'Layout', 'Inputs', 'Navigation', 'Surfaces', 'Feedback', 'Data Display', 'Lab'],
+    },
+  }
+}
 
-const defaultTheme = createTheme(); // or your custom theme
-
-const withThemeProvider = (Story, context) => {
+const providerFn = ({ theme, children }) => {
   return (
-    <Emotion10ThemeProvider theme={defaultTheme}>
-
-      <ThemeProvider theme={defaultTheme}>
-        <Story {...context} />
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        {children}
       </ThemeProvider>
-    </Emotion10ThemeProvider>
+    </StyledEngineProvider>
+  )
+}
 
-  );
-};
-
-export const decorators = [withThemeProvider];
+addDecorator(
+  withThemes(null, [darkTheme, lightTheme], {
+    providerFn
+  })
+)
