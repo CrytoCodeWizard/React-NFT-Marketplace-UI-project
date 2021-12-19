@@ -10,6 +10,7 @@ jobs:
         uses: actions/checkout@main
       - name: Build Storybook
         run: | # Install npm packages and build the Storybook files
+          node -v
           yarn install
           yarn build-storybook
       - name: Deploy to GitHub Pages
