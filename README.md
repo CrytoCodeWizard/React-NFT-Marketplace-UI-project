@@ -21,14 +21,14 @@
   <a href="#warning">Warning</a> ◈
   <a href="#usage">Usage</a> ◈
   <a href="#planned-milestones">Planned Milestones</a> ◈  
-  <a href="#roadmap">Roadmap</a> ◈
-  <a href="#joining-the-discussion">Joining the discussion</a>
+  <a href="#joining-the-discussion">Components</a>
 </p>
 
 ---
 
 # React Component Library
-Library with all shared IOTABOTS components - published on npmjs.com: [@iotabots/components](https://www.npmjs.com/package/@iotabots/components)
+Library with all shared IOTABOTS components - published on npmjs.com: [@iotabots/components](https://www.npmjs.com/package/@iotabots/components). All components can be discovered online here: 
+> [Live Preview Page](https://iotabots.github.io/nft-ui-components/?path=/story/example-backgroundvideo--default)
 
 ## 🎯 Introduction
 This library contains several components to quickly and efficiently build new applications within the IOTABOTS design. It uses the React UI library [MUI](https://mui.com/).
@@ -71,10 +71,34 @@ Say Hello!
 ```
 
 ## Planned Milestones
-TDB
+- [x] Include [MUI](https://mui.com/)
+- [x] Publish on npmjs.com: [@iotabots/components](https://www.npmjs.com/package/@iotabots/components)
+- [ ] Website Components
+- [ ] [web3](https://www.npmjs.com/package/web3) integration
+- [ ] Marketplace Components
+- [ ] Game Center Components
 
-## Roadmap
-TDB
+## Components
+All components can be discovered on the [Live Preview Page](https://iotabots.github.io/nft-ui-components/?path=/story/example-backgroundvideo--default).
 
-## Joining the discussion
-TDB
+### Website Components
+- [ ] Content Box
+- [ ] Roadmap Section
+- [ ] Footer
+- [ ] Navigation
+- [ ] Profile
+- [ ] Bot Card
+- [ ] Bot Gallery
+- [ ] Infinit Bot List 
+
+### Marketplace Components
+- [ ] NFT Gallery
+- [ ] Detail Gallery
+- [ ] Buy Button
+- [ ] Filter
+- [ ] Search
+
+### Game Center Components
+- [ ] Bot Play Page
+- [ ] Game Preview
+- [ ] Leaderboard 
