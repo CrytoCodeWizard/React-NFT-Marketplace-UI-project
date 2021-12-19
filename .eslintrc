@@ -25,6 +25,7 @@
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "project": "./tsconfig.json",
     "tsconfigRootDir": "",
     "ecmaFeatures": {
       "jsx": true
@@ -83,7 +84,7 @@
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
         "ignoreComments": true, // allow longer comments
-        "ignoreRegExpLiterals": true,
+        "ignoreRegExpLiterals": false,
         "ignoreUrls": true
       }
     ],
@@ -121,23 +122,8 @@
     "no-param-reassign": "off",
     //// import rules -> https://github.com/benmosher/eslint-plugin-import
     "import/prefer-default-export": 0, // 3rd party librarys sometimes dont have a default export
-    "import/extensions": [
-      "error",
-      {
-        "ts": "never",
-        "tsx": "never",
-        "js": "never",
-        "jsx": "never"
-      }
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": ["src/**/*.stories.tsx"],
-        "optionalDependencies": false,
-        "peerDependencies": true
-      }
-    ],
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
     //// typescript rules -> https://github.com/typescript-eslint/typescript-eslint
     "@typescript-eslint/member-delimiter-style": [
       "error",
@@ -162,26 +148,13 @@
     "jest/valid-expect": "error",
     "jest/no-deprecated-functions": "off",
     // jsx rules -> https://github.com/evcohen/eslint-plugin-jsx-a11y
-    "jsx-a11y/anchor-has-content": [
-      "warn",
-      {
-        "aspects": ["invalidHref"]
-      }
-    ],
-    "jsx-a11y/anchor-is-valid": "error",
+    "jsx-a11y/anchor-has-content": "off",
+    "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     // "jsx-a11y/href-no-hash": "off",  // removed from jsx-a11y
-    "jsx-a11y/no-noninteractive-element-interactions": "warn", // to increase future coding, raise a warning when onclick on somethin like a div tag
+    "jsx-a11y/no-noninteractive-element-interactions": "off", // to increase future coding, raise a warning when onclick on somethin like a div tag
     // "jsx-a11y/label-has-for": [2, { "required": { "every": ["id"] } }], // depracted
-    "jsx-a11y/label-has-associated-control": [
-      "error",
-      {
-        // replaces label-has-for
-        "labelAttributes": ["label"], // only check for lables
-        "assert": "htmlFor", // check if htmlfor is present
-        "depth": 3
-      }
-    ],
+    "jsx-a11y/label-has-associated-control": "off",
     "jsx-a11y/no-autofocus": "off",
     //// react rules -> https://github.com/yannickcr/eslint-plugin-react
     "react/jsx-filename-extension": [
