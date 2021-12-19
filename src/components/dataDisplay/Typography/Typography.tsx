@@ -18,7 +18,9 @@ export function Typography(props: TypographyProps): JSX.Element {
 const useStyles = makeStyles((theme: Theme) => {
   return {
     root: {
-      fontFamily: theme.typography.fontFamily,
+      '&.MuiTypography-root': {
+        fontFamily: theme.typography.fontFamily
+      },
       '&.MuiTypography-h1, &.MuiTypography-h2, &.MuiTypography-h3, &.MuiTypography-h4, &.MuiTypography-h5, &.MuiTypography-h6':
         {
           fontWeight: theme.typography.fontWeightBold
