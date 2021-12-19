@@ -58,7 +58,7 @@ export function CustomList({
         subheader={`${numberOfChecked(items)}/${items.length} selected`}
       />
       <Divider />
-      <List className={classes.list} dense component='div' role='list'>
+      <List className={classes.list} dense role='list'>
         {items.map((item: never) => {
           const { id, name } = item as never
           const labelId = `transfer-list-all-item-${id}-label`

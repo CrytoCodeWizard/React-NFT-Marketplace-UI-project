@@ -6,17 +6,11 @@ import { addDecorator } from '@storybook/react'
 import { withThemes } from '@react-theming/storybook-addon'
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/
     }
-  },
-  options: {
-    storySort: {
-      order: ['👋 Get started', 'Layout', 'Inputs', 'Navigation', 'Surfaces', 'Feedback', 'Data Display', 'Lab'],
-    },
   }
 }
 
