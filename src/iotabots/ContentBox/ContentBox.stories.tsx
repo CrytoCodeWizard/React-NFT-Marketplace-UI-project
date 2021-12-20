@@ -23,7 +23,7 @@ const Template: Story<ContentBoxProps> = (args) => {
 
 export const Default = Template.bind({})
 Default.args = {
-  title: 'Awesome new Stuff going on here',
+  headline: 'What is an IOTABOT?!',
   text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
   image: 'http://assets.iotabots.io/1.png'
 }
