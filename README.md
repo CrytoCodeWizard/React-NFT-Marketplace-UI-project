@@ -96,7 +96,7 @@ On top of Material UI's base ui components we have custom shared UI components f
 - [ ] Game Center Components
 
 ## ✅ Missing Components
-All components can be discovered on the [Live Preview Page](https://iotabots.github.io/nft-ui-components/?path=/story/example-backgroundvideo--default). The ones below should be added and documented in storybook
+All components can be discovered on the [Live Preview Page](https://iotabots.github.io/nft-ui-components/?path=/story/example-backgroundvideo--default). The ones below will be added and documented in storybook.
 
 ### Website Components
 - [ ] Content Box
