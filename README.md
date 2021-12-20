@@ -16,61 +16,78 @@
   <a href="https://twitter.com/iotabots" style="text-decoration:none;"><img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2Fiotabots" alt="Twitter"></a>
 </p>
 
-<p align="center">
-  <a href="#introduction">Introduction</a> ◈
-  <a href="#warning">Warning</a> ◈
-  <a href="#usage">Usage</a> ◈
-  <a href="#planned-milestones">Planned Milestones</a> ◈  
-  <a href="#joining-the-discussion">Components</a>
-</p>
-
 ---
 
 # React Component Library
-Library with all shared IOTABOTS components - published on npmjs.com: [@iotabots/components](https://www.npmjs.com/package/@iotabots/components). All components can be discovered online here: 
-> [Live Preview Page](https://iotabots.github.io/nft-ui-components/?path=/story/example-backgroundvideo--default)
-
-## 🎯 Introduction
-This library contains several components to quickly and efficiently build new applications within the IOTABOTS design. It uses the React UI library [MUI](https://mui.com/).
+Library with all shared IOTABOTS components - published on npmjs.com: [@iotabots/components](https://www.npmjs.com/package/@iotabots/components). This library contains several components to quickly and efficiently build new applications within the IOTABOTS design. 
 
 > **_Warning:_**
 This library is under active development - please do not use it in production.
 
-
 ## 👆 Usage
+To use the `@iotabots/components` UI library in your React App, follow these steps:
 
-### 💫 Install it in your React app
+### 📦 Install
 
-```
+```bash
+# Yarn
 yarn add @iotabots/components
+
+# Npm
+npm i @iotabots/components
 ```
 
-### 🎨 Add the IOTABOTS Theme
+### 🎨 Theme Provider
+Add this to your root app file. The theme will default to dark mode. You can select `light` and `dark` theme via the `theme` property.
 
-Add this to your root app file:
-```
+```tsx
+// src/App.tsx
 import { ThemeProvider } from '@iotabots/components';
 
 ...
-<ThemeProvider theme={theme}>
-...
+<ThemeProvider theme='dark'>
+  ...
 </ThemeProvider>
 ...
 ```
 
-### 🤖 use it in your IOTABOTS application
+### 📚 Use components
+You can use any component from official **[MUI Docs](https://mui.com/)** or **[Storybook Live Preview](https://iotabots.github.io/nft-ui-components/?path=/story/example-introduction--page)**
 
-```
+```tsx
+// src/pages/Home.tsx
 import { Button } from '@iotabots/components';
 
 ...
 <Button onClick={console.log("Hello 🤖")}>
-Say Hello!
+  Say Hello!
 </Button>
 ...
 ```
 
-## Planned Milestones
+### 🌗 Light and Darkmode
+In case you want your users to toggle between light and dark, create a new file called `Theme.tsx` like we do here https://github.com/iotabots/iotabots.io/blob/main/contexts/Theme.tsx. If you want the user's mode to be stored in local storage, also see these imports in the Theme https://github.com/iotabots/iotabots.io/blob/main/utils/localStorage.ts. Otherwise just remove the utils `getItem` and `setItem`.
+
+## ℹ️ Info
+
+### Material UI
+We extend the React UI library **[MUI](https://mui.com/)** for theming and base UI components. You can import almost all components from the MUI official docs just from `iotabots/components`, see before-after-example here
+
+```tsx
+// Don't
+import { Button } from '@mui/material'
+
+// Do
+import { Button } from '@iotabots/components'
+```
+
+> **_Note_**
+If a component from official MUI docs is not included in `@iotabots/components`, you can also use the one from `@mui/material`.
+
+### Storybook
+On top of Material UI's base ui components we have custom shared UI components for the iotabots team and community. These can be found in Storybook [Live Preview Page](https://iotabots.github.io/nft-ui-components/?path=/story/example-introduction--page)
+
+## 🎯 Planned Milestones
 - [x] Include [MUI](https://mui.com/)
 - [x] Publish on npmjs.com: [@iotabots/components](https://www.npmjs.com/package/@iotabots/components)
 - [ ] Website Components
@@ -78,8 +95,8 @@ Say Hello!
 - [ ] Marketplace Components
 - [ ] Game Center Components
 
-## Components
-All components can be discovered on the [Live Preview Page](https://iotabots.github.io/nft-ui-components/?path=/story/example-backgroundvideo--default).
+## ✅ Missing Components
+All components can be discovered on the [Live Preview Page](https://iotabots.github.io/nft-ui-components/?path=/story/example-backgroundvideo--default). The ones below should be added and documented in storybook
 
 ### Website Components
 - [ ] Content Box
