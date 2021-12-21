@@ -44,7 +44,8 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => {
 const useStyles = makeStyles((theme: Theme) => {
   return {
     root: {
-      paddingTop: '20px'
+      paddingTop: '20px',
+      position: 'relative'
     },
     clipHeader: {
       backgroundColor: theme.palette.background.paper,
@@ -59,12 +60,15 @@ const useStyles = makeStyles((theme: Theme) => {
       position: 'relative',
       zIndex: -1,
       // prettier-ignore
-      clipPath: 'polygon(0 0, 0 100%, calc(100% - 80px) 100%, 100% calc(100% - 80px), 100% 0)'
+      clipPath: 'polygon(0 0, 0 100%, calc(100% - 80px) 100%, 100% calc(100% - 80px), 100% 0)',
+      [theme.breakpoints.down('sm')]: {
+        // prettier-ignore
+        clipPath: 'polygon(0 0, 0 100%, calc(100% - 40px) 100%, 100% calc(100% - 40px), 100% 0)'
+      }
     },
     contentWrapper: {
       backgroundColor: theme.palette.background.paper,
       display: 'flex',
-      gap: theme.spacing(4),
       [theme.breakpoints.down('sm')]: {
         flexDirection: 'column'
       },
@@ -78,11 +82,13 @@ const useStyles = makeStyles((theme: Theme) => {
         paddingRight: theme.spacing(4)
       },
       [theme.breakpoints.up('sm')]: {
+        flexBasis: 'auto',
         flexGrow: 1,
-        paddingRight: '120px'
+        flexShrink: 1,
+        paddingRight: '137px'
       },
       [theme.breakpoints.up('md')]: {
-        paddingRight: theme.spacing(4)
+        paddingRight: theme.spacing(6)
       }
     },
     textHeadline: {
@@ -100,7 +106,8 @@ const useStyles = makeStyles((theme: Theme) => {
         hyphens: 'auto',
         overflow: 'hidden',
         wordBreak: 'break-word',
-        wordWrap: 'break-word'
+        wordWrap: 'break-word',
+        maxWidth: 'calc(100% - 40px)'
       },
       // prettier-ignore
       clipPath: 'polygon(20px 0, 0 20px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
@@ -118,7 +125,9 @@ const useStyles = makeStyles((theme: Theme) => {
         filter: `drop-shadow(-6px 6px 0px ${theme.palette.background.paper})`
       },
       [theme.breakpoints.up('md')]: {
-        flexGrow: 1,
+        flexBasis: 0,
+        flexGrow: 0,
+        flexShrink: 1,
         position: 'relative',
         top: 'auto',
         right: 'auto',
@@ -133,14 +142,13 @@ const useStyles = makeStyles((theme: Theme) => {
         clipPath: 'polygon(10px 0, 0 10px, 0 100%, calc(100% - 10px) 100%, 100% calc(100% - 10px), 100% 0)'
       },
       [theme.breakpoints.up('sm')]: {
-        width: '100px',
+        width: '117px',
         // prettier-ignore
         clipPath: 'polygon(20px 0, 0 20px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
       },
       [theme.breakpoints.up('md')]: {
         marginTop: '-40px',
-        minWidth: '150px',
-        width: 'auto',
+        minWidth: '200px',
         // prettier-ignore
         clipPath: 'polygon(40px 0, 0 40px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
       }
