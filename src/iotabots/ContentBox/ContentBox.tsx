@@ -21,7 +21,7 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => {
 
   return (
     <>
-      <Box className={classes.root}>
+      <Box className={classes.contentBoxWrapper}>
         <Box className={classes.header} />
         <Box className={classes.body}>
           {image && (
@@ -49,7 +49,7 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => {
 
 const useStyles = makeStyles((theme: Theme) => {
   return {
-    root: {
+    contentBoxWrapper: {
       paddingTop: '20px',
       position: 'relative'
     },
