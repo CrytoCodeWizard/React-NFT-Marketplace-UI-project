@@ -5,8 +5,8 @@ import makeStyles from '@mui/styles/makeStyles'
 import { Theme } from '../../theme/types'
 
 export interface ContentBoxProps {
-  headline: string
-  text: string
+  headline: string | Node
+  text: string | Node
   image: string
 }
 
