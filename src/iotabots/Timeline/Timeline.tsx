@@ -41,7 +41,13 @@ const useStyles = makeStyles((theme: Theme) => {
     timelineWrapper: {
       display: 'flex',
       gap: '20px',
-      // only set a maxWidth if an image is given
+      // custom styling for looping elements
+      '& + $timelineWrapper': {
+        marginTop: '20px'
+      },
+      '& + $timelineWrapper:last-child $statusWrapper $statusLine': {
+        bottom: 'calc(100% - 40px)'
+      },
       '& + $timelineWrapper $statusWrapper $statusLine': {
         top: '-30px'
       }
@@ -67,7 +73,7 @@ const useStyles = makeStyles((theme: Theme) => {
       position: 'absolute',
       left: '50%',
       top: '30px',
-      bottom: '20px',
+      bottom: '0',
       transform: 'translateX(-50%)',
       background: '#ffffff'
     },
@@ -78,7 +84,6 @@ const useStyles = makeStyles((theme: Theme) => {
       flexGrow: 1,
       flexShrink: 1,
       flexBasis: 'auto',
-      marginBottom: '20px',
       // prettier-ignore
       clipPath: 'polygon(20px 0, 0 20px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
     },
