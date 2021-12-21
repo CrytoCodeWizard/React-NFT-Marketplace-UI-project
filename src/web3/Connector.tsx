@@ -6,10 +6,12 @@ import {
 } from '@web3-react/injected-connector'
 import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } from '@web3-react/walletconnect-connector'
 import { Web3Provider } from '@ethersproject/providers'
-import { formatEther } from '@ethersproject/units'
 
 import { Box, Button, Divider } from '../components'
 import { useEagerConnect, useInactiveListener } from './hooks/hooks'
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { formatEther } = require('@ethersproject/units')
 
 // eslint-disable-next-line max-len
 const ERROR_NO_ETH_PROVIDER =
@@ -203,11 +205,7 @@ const Connector: React.FC = () => {
                 })
                 .catch(() => {
                   // eslint-disable-next-line no-console
-                  console.log(
-                    `Failure!${
-                      error && error.message ? `\n\n${error.message}` : ''
-                    }`
-                  )
+                  console.log('error')
                 })
             }}
           >
