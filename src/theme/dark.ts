@@ -1,6 +1,6 @@
 import { overrides } from './overrides'
 
-const TYPE = 'light'
+const TYPE = 'dark'
 
 // --------------------------------------------
 // C O L O R S

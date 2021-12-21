@@ -24,8 +24,18 @@ const providerFn = ({ theme, children }) => {
   )
 }
 
+export const onThemeSwitch = context => {
+  const parameters = {
+    backgrounds: null,
+  };
+  return {
+    parameters,
+  };
+};
+
 addDecorator(
   withThemes(null, [darkTheme, lightTheme], {
-    providerFn
+    providerFn,
+    onThemeSwitch
   })
 )
