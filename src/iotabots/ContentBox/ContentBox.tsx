@@ -56,15 +56,10 @@ const useStyles = makeStyles((theme: Theme) => {
     },
     clipFooter: {
       backgroundColor: theme.palette.background.paper,
-      height: '80px',
+      height: '40px',
       position: 'relative',
-      zIndex: -1,
       // prettier-ignore
-      clipPath: 'polygon(0 0, 0 100%, calc(100% - 80px) 100%, 100% calc(100% - 80px), 100% 0)',
-      [theme.breakpoints.down('md')]: {
-        // prettier-ignore
-        clipPath: 'polygon(0 0, 0 100%, calc(100% - 40px) 100%, 100% calc(100% - 40px), 100% 0)'
-      }
+      clipPath: 'polygon(0 0, 0 100%, calc(100% - 40px) 100%, 100% calc(100% - 40px), 100% 0)'
     },
     contentWrapper: {
       backgroundColor: theme.palette.background.paper,
@@ -74,7 +69,6 @@ const useStyles = makeStyles((theme: Theme) => {
       }
     },
     textWrapper: {
-      marginBottom: '-40px',
       [theme.breakpoints.up('md')]: {
         flexBasis: 'auto',
         flexGrow: 1,
@@ -130,8 +124,7 @@ const useStyles = makeStyles((theme: Theme) => {
         order: 2,
         flexBasis: 0,
         flexGrow: 0,
-        flexShrink: 1,
-        marginBottom: '-40px'
+        flexShrink: 1
       }
     },
     image: {
