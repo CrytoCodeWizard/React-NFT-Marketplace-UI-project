@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme: Theme) => {
       paddingTop: '20px',
       position: 'relative'
     },
+    // use a top and bottom div for clipping, because of the overflow behavior
     clipHeader: {
       backgroundColor: theme.palette.background.paper,
       height: '40px',
@@ -104,12 +105,14 @@ const useStyles = makeStyles((theme: Theme) => {
     },
     imageWrapper: {
       [theme.breakpoints.down('sm')]: {
+        // add a lower left dropShadow on mobile to make it look like cropped
         filter: `drop-shadow(-6px 6px 0px ${theme.palette.background.paper})`,
         '& + $textWrapper $textHeadline': {
           maxWidth: 'calc(100% - 40px)'
         }
       },
       [theme.breakpoints.only('sm')]: {
+        // only set a maxWidth if an image is given
         '& + $textWrapper $textHeadline': {
           maxWidth: 'calc(100% - 115px)'
         }
