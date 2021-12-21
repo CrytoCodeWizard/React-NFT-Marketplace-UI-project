@@ -1,6 +1,6 @@
 import { overrides } from './overrides'
 
-const TYPE = 'light'
+const TYPE = 'dark'
 
 // --------------------------------------------
 // C O L O R S
@@ -133,8 +133,8 @@ const palette = {
 // --------------------------------------------
 // T Y P O G R A P H Y
 // ------------------
-const FONT_FAMILY_HEADLINE = '"Press Start 2"P'
-const FONT_FAMILY_BODY = '"Press Start 2P"'
+const FONT_FAMILY_HEADLINE = '"ChargeVector"'
+const FONT_FAMILY_BODY = '"ChargeVector"'
 
 const FONT_WEIGHT_HEADLINE = 400
 const FONT_WEIGHT_BODY = 400
