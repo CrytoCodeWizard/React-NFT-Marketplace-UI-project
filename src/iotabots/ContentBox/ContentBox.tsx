@@ -21,21 +21,21 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => {
   return (
     <>
       <Box className={classes.root}>
-        <Box className={classes.clipHeader} />
-        <Box className={classes.contentWrapper}>
+        <Box className={classes.header} />
+        <Box className={classes.body}>
           {image && (
             <Box className={classes.imageWrapper}>
               <Box component='img' src={image} className={classes.image} />
             </Box>
           )}
-          <Box className={classes.textWrapper}>
-            <Box className={classes.textHeadline}>
+          <Box className={classes.contentWrapper}>
+            <Box className={classes.contentHeadline}>
               <Typography variant='h4'>{headline}</Typography>
             </Box>
-            <Typography className={classes.textBody}>{text}</Typography>
+            <Typography className={classes.contentText}>{text}</Typography>
           </Box>
         </Box>
-        <Box className={classes.clipFooter} />
+        <Box className={classes.footer} />
       </Box>
     </>
   )
@@ -48,28 +48,28 @@ const useStyles = makeStyles((theme: Theme) => {
       position: 'relative'
     },
     // use a top and bottom div for clipping, because of the overflow behavior
-    clipHeader: {
+    header: {
       backgroundColor: theme.palette.background.paper,
       height: '40px',
       marginTop: '-20px',
       // prettier-ignore
       clipPath: 'polygon(80px 0, 0 80px, 0 100%, 100% 100%, 100% 100%, 100% 0)'
     },
-    clipFooter: {
+    footer: {
       backgroundColor: theme.palette.background.paper,
       height: '40px',
       position: 'relative',
       // prettier-ignore
       clipPath: 'polygon(0 0, 0 100%, calc(100% - 40px) 100%, 100% calc(100% - 40px), 100% 0)'
     },
-    contentWrapper: {
+    body: {
       backgroundColor: theme.palette.background.paper,
       [theme.breakpoints.up('md')]: {
         display: 'flex',
         justifyContent: 'space-between'
       }
     },
-    textWrapper: {
+    contentWrapper: {
       [theme.breakpoints.up('md')]: {
         flexBasis: 'auto',
         flexGrow: 1,
@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme: Theme) => {
         order: 1
       }
     },
-    textHeadline: {
+    contentHeadline: {
       backgroundColor: theme.palette.primary.main,
       boxSizing: 'border-box',
       color: theme.palette.common.white,
@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme: Theme) => {
       // prettier-ignore
       clipPath: 'polygon(20px 0, 0 20px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
     },
-    textBody: {
+    contentText: {
       color: theme.palette.text.secondary,
       padding: theme.spacing(6),
       paddingBottom: 0
@@ -107,13 +107,13 @@ const useStyles = makeStyles((theme: Theme) => {
       [theme.breakpoints.down('sm')]: {
         // add a lower left dropShadow on mobile to make it look like cropped
         filter: `drop-shadow(-6px 6px 0px ${theme.palette.background.paper})`,
-        '& + $textWrapper $textHeadline': {
+        '& + $contentWrapper $contentHeadline': {
           maxWidth: 'calc(100% - 40px)'
         }
       },
       [theme.breakpoints.only('sm')]: {
         // only set a maxWidth if an image is given
-        '& + $textWrapper $textHeadline': {
+        '& + $contentWrapper $contentHeadline': {
           maxWidth: 'calc(100% - 115px)'
         }
       },
