@@ -8,11 +8,11 @@ export default {
   title: 'iotabots/Timeline',
   component: Timeline,
   argTypes: {
-    status: {
-      defaultValue: 'unchecked',
+    checked: {
+      defaultValue: true,
       control: {
         type: 'select',
-        options: ['unchecked', 'checked']
+        options: [true, false]
       }
     }
   },
@@ -26,10 +26,18 @@ export default {
   }
 }
 
-const Template: Story<TimelineProps> = (args) => {
+const Template: Story<TimelineProps> = () => {
   return (
     <ContentBox headline={'Roadmap'} text={''} image={''}>
-      <Timeline {...args} />
+      <Timeline checked={true} title='Timeline Title 1'>
+        This is the first text for the timeline entry.
+      </Timeline>
+      <Timeline checked={true} title='Timeline Title 2'>
+        This is the second text for the timeline entry.
+      </Timeline>
+      <Timeline checked={false} title='Timeline Title 3'>
+        This is the third text for the timeline entry.
+      </Timeline>
     </ContentBox>
   )
 }

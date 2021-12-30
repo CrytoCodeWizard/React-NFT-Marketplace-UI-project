@@ -5,30 +5,40 @@ import makeStyles from '@mui/styles/makeStyles'
 import { Theme } from '../../theme/types'
 
 export interface TimelineProps {
-  status: string
+  checked: boolean
+  title: string
 }
 
-export const Timeline: React.FC<TimelineProps> = (props) => {
-  const { status } = props
+export const Timeline: React.FC<TimelineProps> = ({ children, ...props }) => {
+  const { checked, title } = props
   const classes = useStyles()
+
+  if (checked) {
+    console.log('checked')
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Checked = (): any => {
+    const isChecked = props.checked
+    if (isChecked) {
+      return <Box className={classes.statusCirle}></Box>
+    }
+    return <></>
+  }
 
   return (
     <>
       <Box className={classes.timelineWrapper}>
         <Box className={classes.statusWrapper}>
-          <Box className={classes.statusCirle}></Box>
+          <Checked />
           <Box className={classes.statusLine}></Box>
         </Box>
         <Box className={classes.cardWrapper}>
           <Box className={classes.cardHeadline}>
-            <Typography variant='h6'>{status}</Typography>
+            <Typography variant='h6'>{title}</Typography>
           </Box>
           <Box className={classes.cardText}>
-            <Typography>
-              {
-                'consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
-              }
-            </Typography>
+            <Typography>{children}</Typography>
           </Box>
         </Box>
       </Box>
