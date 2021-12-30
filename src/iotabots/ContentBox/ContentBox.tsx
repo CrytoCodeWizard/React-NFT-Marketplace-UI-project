@@ -8,10 +8,11 @@ export interface ContentBoxProps {
   headline: string
   text: string
   image: string
+  children: JSX.Element[] | JSX.Element
 }
 
 export const ContentBox: React.FC<ContentBoxProps> = (props) => {
-  const { headline, text, image } = props
+  const { headline, text, image, children } = props
   const classes = useStyles()
 
   React.useEffect(() => {
@@ -20,7 +21,7 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => {
 
   return (
     <>
-      <Box className={classes.root}>
+      <Box className={classes.contentBoxWrapper}>
         <Box className={classes.header} />
         <Box className={classes.body}>
           {image && (
@@ -32,7 +33,12 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => {
             <Box className={classes.contentHeadline}>
               <Typography variant='h4'>{headline}</Typography>
             </Box>
-            <Typography className={classes.contentText}>{text}</Typography>
+            {text && !children && (
+              <Typography className={classes.contentText}>{text}</Typography>
+            )}
+            {children && !text && (
+              <Box className={classes.contentElement}>{children}</Box>
+            )}
           </Box>
         </Box>
         <Box className={classes.footer} />
@@ -43,7 +49,7 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => {
 
 const useStyles = makeStyles((theme: Theme) => {
   return {
-    root: {
+    contentBoxWrapper: {
       paddingTop: '20px',
       position: 'relative'
     },
@@ -76,6 +82,9 @@ const useStyles = makeStyles((theme: Theme) => {
         flexShrink: 1,
         order: 1
       }
+    },
+    contentElement: {
+      padding: theme.spacing(6)
     },
     contentHeadline: {
       backgroundColor: theme.palette.primary.main,
