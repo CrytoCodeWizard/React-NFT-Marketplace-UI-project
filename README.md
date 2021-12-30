@@ -91,7 +91,7 @@ On top of Material UI's base ui components we have custom shared UI components f
 - [x] Include [MUI](https://mui.com/)
 - [x] Publish on npmjs.com: [@iotabots/components](https://www.npmjs.com/package/@iotabots/components)
 - [ ] Website Components
-- [ ] [web3](https://www.npmjs.com/package/web3) integration
+- [x] [web3-react](https://github.com/NoahZinsmeister/web3-react) integration
 - [ ] Marketplace Components
 - [ ] Game Center Components
 
