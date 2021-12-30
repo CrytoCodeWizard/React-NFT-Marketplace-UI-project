@@ -3,7 +3,7 @@ import { NetworkConnector } from '@web3-react/network-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 
 const RPC_URLS: { [chainId: number]: string } = {
-  1074: process.env.RPC_URL_IOTA_EVM as string
+  1074: 'https://evm.wasp.sc.iota.org'
 }
 
 export const injected = new InjectedConnector({
