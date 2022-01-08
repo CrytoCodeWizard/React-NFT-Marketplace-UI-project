@@ -30,13 +30,13 @@ const Template: Story<TimelineProps> = () => {
   return (
     <ContentBox headline={'Roadmap'} text={''} image={''}>
       <Timeline checked={false} title='Timeline Title 1'>
-        This is the first text for the timeline entry.
+        {'This is the first text for the timeline entry'}
       </Timeline>
       <Timeline checked={true} title='Timeline Title 2'>
-        This is the second text for the timeline entry.
+        {'This is the second text for the timeline entry'}
       </Timeline>
       <Timeline checked={true} title='Timeline Title 3'>
-        This is the third text for the timeline entry.
+        {'This is the third text for the timeline entry'}
       </Timeline>
     </ContentBox>
   )

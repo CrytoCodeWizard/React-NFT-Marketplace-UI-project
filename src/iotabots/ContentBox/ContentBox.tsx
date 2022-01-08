@@ -9,7 +9,7 @@ export interface ContentBoxProps {
   headline: string
   text: string
   image: string | JSX.Element
-  children: JSX.Element[] | JSX.Element
+  children?: string | JSX.Element[] | JSX.Element
 }
 
 export const ContentBox: React.FC<ContentBoxProps> = (props) => {

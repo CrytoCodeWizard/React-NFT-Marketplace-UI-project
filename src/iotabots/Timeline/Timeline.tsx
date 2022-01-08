@@ -7,10 +7,11 @@ import { Theme } from '../../theme/types'
 export interface TimelineProps {
   checked: boolean
   title: string
+  children?: string | JSX.Element[] | JSX.Element
 }
 
-export const Timeline: React.FC<TimelineProps> = ({ children, ...props }) => {
-  const { checked, title } = props
+export const Timeline: React.FC<TimelineProps> = (props) => {
+  const { checked, title, children } = props
   const classes = useStyles(props)
 
   if (checked) {
@@ -29,7 +30,7 @@ export const Timeline: React.FC<TimelineProps> = ({ children, ...props }) => {
             <Typography variant='h6'>{title}</Typography>
           </Box>
           <Box className={classes.cardText}>
-            <Typography>{children}</Typography>
+            {children && <Typography>{children}</Typography>}
           </Box>
         </Box>
       </Box>

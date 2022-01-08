@@ -9,11 +9,12 @@ export interface BotCardProps {
   text: string
   maxWidth: string
   rounded: boolean
-  image: string | JSX.Element
+  image: JSX.Element
+  children?: string | JSX.Element[] | JSX.Element
 }
 
 export const BotCard: React.FC<BotCardProps> = (props) => {
-  const { headline, text, image } = props
+  const { headline, text, image, children } = props
   const classes = useStyles(props)
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -30,10 +31,13 @@ export const BotCard: React.FC<BotCardProps> = (props) => {
           )}
           {!isString(image) && image}
         </Box>
-        {(headline || text) && (
+        {(headline || text || children) && (
           <Box className={classes.textWrapper}>
             {headline && <Typography variant='h4'>{headline}</Typography>}
-            {text && <Typography>{text}</Typography>}
+            {text && !children && <Typography>{text}</Typography>}
+            {children && !text && (
+              <Box className={classes.contentElement}>{children}</Box>
+            )}
           </Box>
         )}
       </Box>
@@ -75,7 +79,7 @@ const useStyles = makeStyles<Theme, BotCardProps>((theme: Theme) => {
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
-        width: props.maxWidth
+        maxWidth: props.maxWidth
       }
     },
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -114,11 +118,11 @@ const useStyles = makeStyles<Theme, BotCardProps>((theme: Theme) => {
     textWrapper: (props) => {
       return {
         backgroundColor: theme.palette.background.paper,
+        color: theme.palette.text.secondary,
         display: 'flex',
         flexDirection: 'column',
+        padding: '5%',
         textAlign: 'center',
-        padding: theme.spacing(2),
-        color: theme.palette.text.secondary,
         '&:last-child:not(:first-child)': {
           borderRadius: props.rounded === true ? '0 0 4px 4px' : '0'
         }
