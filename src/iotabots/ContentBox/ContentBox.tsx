@@ -51,7 +51,10 @@ const useStyles = makeStyles((theme: Theme) => {
   return {
     contentBoxWrapper: {
       paddingTop: '20px',
-      position: 'relative'
+      position: 'relative',
+      '&:not(:last-child)': {
+        marginBottom: theme.spacing(6)
+      }
     },
     // use a top and bottom div for clipping, because of the overflow behavior
     header: {
