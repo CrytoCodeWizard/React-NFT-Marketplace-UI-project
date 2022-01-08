@@ -89,7 +89,7 @@ const useStyles = makeStyles<Theme, TimelineProps>((theme: Theme) => {
     },
     cardWrapper: {
       background: theme.palette.text.secondary,
-      color: '#ffffff',
+      color: theme.palette.common.white,
       flexGrow: 1,
       padding: '20px',
       // prettier-ignore
