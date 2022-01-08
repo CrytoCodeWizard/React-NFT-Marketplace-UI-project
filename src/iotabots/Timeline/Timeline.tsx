@@ -11,26 +11,17 @@ export interface TimelineProps {
 
 export const Timeline: React.FC<TimelineProps> = ({ children, ...props }) => {
   const { checked, title } = props
-  const classes = useStyles()
+  const classes = useStyles(props)
 
   if (checked) {
     console.log('checked')
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const Checked = (): any => {
-    const isChecked = props.checked
-    if (isChecked) {
-      return <Box className={classes.statusCirle}></Box>
-    }
-    return <></>
   }
 
   return (
     <>
       <Box className={classes.timelineWrapper}>
         <Box className={classes.statusWrapper}>
-          <Checked />
+          <Box className={classes.statusCirle}></Box>
           <Box className={classes.statusLine}></Box>
         </Box>
         <Box className={classes.cardWrapper}>
@@ -46,7 +37,7 @@ export const Timeline: React.FC<TimelineProps> = ({ children, ...props }) => {
   )
 }
 
-const useStyles = makeStyles((theme: Theme) => {
+const useStyles = makeStyles<Theme, TimelineProps>((theme: Theme) => {
   return {
     timelineWrapper: {
       display: 'flex',
@@ -63,34 +54,44 @@ const useStyles = makeStyles((theme: Theme) => {
       }
     },
     statusWrapper: {
-      position: 'relative',
       flexBasis: '20px',
-      minWidth: '20px'
+      minWidth: '20px',
+      position: 'relative'
     },
-    statusCirle: {
-      width: '20px',
-      height: '20px',
-      borderRadius: '20px',
-      background: theme.palette.primary.main,
-      position: 'absolute',
-      left: 0,
-      top: '24px',
-      zIndex: 1
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+    statusCirle: (props) => {
+      return {
+        borderColor: theme.palette.primary.main,
+        borderRadius: '20px',
+        borderStyle: 'solid',
+        borderWidth: '3px',
+        boxSizing: 'border-box',
+        height: '20px',
+        left: 0,
+        position: 'absolute',
+        top: '24px',
+        width: '20px',
+        zIndex: 1,
+        background:
+          props.checked === true
+            ? theme.palette.primary.main
+            : theme.palette.common.white
+      }
     },
     statusLine: {
-      width: '1px',
-      position: 'absolute',
-      left: '50%',
-      top: '30px',
+      background: theme.palette.text.secondary,
       bottom: '0',
+      left: '50%',
+      position: 'absolute',
+      top: '30px',
       transform: 'translateX(-50%)',
-      background: '#ffffff'
+      width: '1px'
     },
     cardWrapper: {
-      padding: '20px',
       background: theme.palette.text.secondary,
       color: '#ffffff',
       flexGrow: 1,
+      padding: '20px',
       // prettier-ignore
       clipPath: 'polygon(20px 0, 0 20px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
     },
