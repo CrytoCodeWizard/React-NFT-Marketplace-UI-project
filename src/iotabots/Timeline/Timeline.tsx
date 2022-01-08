@@ -64,9 +64,8 @@ const useStyles = makeStyles((theme: Theme) => {
     },
     statusWrapper: {
       position: 'relative',
-      flexGrow: 1,
-      flexShrink: 0,
-      flexBasis: '20px'
+      flexBasis: '20px',
+      minWidth: '20px'
     },
     statusCirle: {
       width: '20px',
@@ -92,8 +91,6 @@ const useStyles = makeStyles((theme: Theme) => {
       background: theme.palette.text.secondary,
       color: '#ffffff',
       flexGrow: 1,
-      flexShrink: 1,
-      flexBasis: 'auto',
       // prettier-ignore
       clipPath: 'polygon(20px 0, 0 20px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
     },
