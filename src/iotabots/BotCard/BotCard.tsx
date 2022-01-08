@@ -43,6 +43,32 @@ export const BotCard: React.FC<BotCardProps> = (props) => {
 
 const useStyles = makeStyles<Theme, BotCardProps>((theme: Theme) => {
   return {
+    '@global': {
+      //need add into global rules
+      '@keyframes pulsate': {
+        '0%': {
+          transform: 'translate(-50%, -50%) scale(0.6)'
+        },
+        '10%': {
+          transform: 'translate(-50%, -50%) scale(0.7)'
+        },
+        '20%': {
+          transform: 'translate(-50%, -50%) scale(0.8)'
+        },
+        '30%': {
+          transform: 'translate(-50%, -50%) scale(0.9)'
+        },
+        '40%': {
+          transform: 'translate(-50%, -50%) scale(1)'
+        },
+        '50%': {
+          transform: 'translate(-50%, -50%) scale(0.6)'
+        },
+        '100%': {
+          transform: 'translate(-50%, -50%) scale(0.8)'
+        }
+      }
+    },
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     botCardWrapper: (props) => {
       return {
@@ -55,9 +81,23 @@ const useStyles = makeStyles<Theme, BotCardProps>((theme: Theme) => {
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     imageWrapper: (props) => {
       return {
+        position: 'relative',
+        '&::after': {
+          animation: 'pulsate 1s infinite',
+          background: theme.palette.text.secondary,
+          borderRadius: '20px',
+          content: '""',
+          height: '20px',
+          left: '50%',
+          position: 'absolute',
+          top: '50%',
+          width: '20px',
+          zIndex: '-1'
+        },
         '& img': {
           display: 'block',
           maxWidth: '100%',
+          background: 'transparent',
           borderRadius: props.rounded === true ? '4px 4px 0 0' : '0'
         },
         '&:first-child:last-child img': {

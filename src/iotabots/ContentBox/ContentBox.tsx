@@ -56,32 +56,6 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => {
 
 const useStyles = makeStyles((theme: Theme) => {
   return {
-    '@global': {
-      //need add into global rules
-      '@keyframes pulsate': {
-        '0%': {
-          transform: 'scale(0.6)'
-        },
-        '10%': {
-          transform: 'scale(0.7)'
-        },
-        '20%': {
-          transform: 'scale(0.8)'
-        },
-        '30%': {
-          transform: 'scale(0.9)'
-        },
-        '40%': {
-          transform: 'scale(1)'
-        },
-        '50%': {
-          transform: 'scale(0.6)'
-        },
-        '100%': {
-          transform: 'scale(0.8)'
-        }
-      }
-    },
     contentBoxWrapper: {
       paddingTop: '20px',
       position: 'relative',
@@ -181,20 +155,7 @@ const useStyles = makeStyles((theme: Theme) => {
         width: '100%'
       },
       '& > div': {
-        position: 'relative',
         width: '100%',
-        '&::before': {
-          animation: 'pulsate 1s infinite',
-          background: theme.palette.text.secondary,
-          borderRadius: '20px',
-          content: '""',
-          height: '20px',
-          left: '50%',
-          position: 'absolute',
-          top: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '20px'
-        },
         [theme.breakpoints.up('md')]: {
           marginTop: '-40px'
         }
