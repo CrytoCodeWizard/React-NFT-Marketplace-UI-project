@@ -82,6 +82,20 @@ const useStyles = makeStyles<Theme, BotCardProps>((theme: Theme) => {
     imageWrapper: (props) => {
       return {
         position: 'relative',
+        '& > span': {
+          display: 'block !important'
+        },
+        '& img': {
+          background: 'transparent',
+          borderRadius: props.rounded === true ? '4px 4px 0 0' : '0',
+          display: 'block',
+          maxWidth: '100%',
+          position: 'relative',
+          zIndex: 1
+        },
+        '&:first-child:last-child img': {
+          borderRadius: props.rounded === true ? '4px' : '0'
+        },
         '&::after': {
           animation: 'pulsate 1s infinite',
           background: theme.palette.text.secondary,
@@ -92,16 +106,7 @@ const useStyles = makeStyles<Theme, BotCardProps>((theme: Theme) => {
           position: 'absolute',
           top: '50%',
           width: '20px',
-          zIndex: '-1'
-        },
-        '& img': {
-          display: 'block',
-          maxWidth: '100%',
-          background: 'transparent',
-          borderRadius: props.rounded === true ? '4px 4px 0 0' : '0'
-        },
-        '&:first-child:last-child img': {
-          borderRadius: props.rounded === true ? '4px' : '0'
+          zIndex: 0
         }
       }
     },
