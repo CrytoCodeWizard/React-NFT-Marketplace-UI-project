@@ -9,7 +9,7 @@ export interface BotCardProps {
   text: string
   maxWidth: string
   rounded: boolean
-  image: JSX.Element
+  image: string | JSX.Element
   children?: string | JSX.Element[] | JSX.Element
 }
 
