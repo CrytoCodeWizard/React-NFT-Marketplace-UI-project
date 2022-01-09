@@ -1,14 +1,15 @@
 import React from 'react'
 import { Box } from '@mui/material'
 import { Typography } from '../../components/index'
+import { BotCard } from '../BotCard/BotCard'
 import makeStyles from '@mui/styles/makeStyles'
 import { Theme } from '../../theme/types'
 
 export interface ContentBoxProps {
   headline: string
   text: string
-  image: string
-  children: JSX.Element[] | JSX.Element
+  image: string | JSX.Element
+  children?: string | JSX.Element[] | JSX.Element
 }
 
 export const ContentBox: React.FC<ContentBoxProps> = (props) => {
@@ -26,7 +27,13 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => {
         <Box className={classes.body}>
           {image && (
             <Box className={classes.imageWrapper}>
-              <Box component='img' src={image} className={classes.image} />
+              <BotCard
+                image={image}
+                headline={''}
+                text={''}
+                maxWidth={'200px'}
+                rounded={false}
+              />
             </Box>
           )}
           <Box className={classes.contentWrapper}>
@@ -51,7 +58,10 @@ const useStyles = makeStyles((theme: Theme) => {
   return {
     contentBoxWrapper: {
       paddingTop: '20px',
-      position: 'relative'
+      position: 'relative',
+      '&:not(:last-child)': {
+        marginBottom: theme.spacing(6)
+      }
     },
     // use a top and bottom div for clipping, because of the overflow behavior
     header: {
@@ -114,6 +124,8 @@ const useStyles = makeStyles((theme: Theme) => {
     },
     imageWrapper: {
       [theme.breakpoints.down('sm')]: {
+        height: '60px',
+        width: '60px',
         // add a lower left dropShadow on mobile to make it look like cropped
         filter: `drop-shadow(-6px 6px 0px ${theme.palette.background.paper})`,
         '& + $contentWrapper $contentHeadline': {
@@ -121,6 +133,9 @@ const useStyles = makeStyles((theme: Theme) => {
         }
       },
       [theme.breakpoints.only('sm')]: {
+        // same height as a short headline
+        height: '96px',
+        width: '96px',
         // only set a maxWidth if an image is given
         '& + $contentWrapper $contentHeadline': {
           maxWidth: 'calc(100% - 115px)'
@@ -133,29 +148,32 @@ const useStyles = makeStyles((theme: Theme) => {
         zIndex: 1
       },
       [theme.breakpoints.up('md')]: {
+        flexGrow: 1,
+        flexShrink: 1,
+        maxWidth: '160px',
         order: 2,
-        flexBasis: 0,
-        flexGrow: 0,
-        flexShrink: 1
-      }
-    },
-    image: {
-      maxWidth: '100%',
-      [theme.breakpoints.down('sm')]: {
-        width: '60px',
-        // prettier-ignore
-        clipPath: 'polygon(10px 0, 0 10px, 0 100%, calc(100% - 10px) 100%, 100% calc(100% - 10px), 100% 0)'
+        width: '100%'
       },
-      [theme.breakpoints.only('sm')]: {
-        height: '96px', // same height as a short headline
-        // prettier-ignore
-        clipPath: 'polygon(20px 0, 0 20px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
+      '& > div': {
+        width: '100%',
+        [theme.breakpoints.up('md')]: {
+          marginTop: '-40px'
+        }
       },
-      [theme.breakpoints.up('md')]: {
-        marginTop: '-40px',
-        minWidth: '200px',
-        // prettier-ignore
-        clipPath: 'polygon(40px 0, 0 40px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
+      '& img': {
+        [theme.breakpoints.down('sm')]: {
+          // prettier-ignore
+          clipPath: 'polygon(10px 0, 0 10px, 0 100%, calc(100% - 10px) 100%, 100% calc(100% - 10px), 100% 0)'
+        },
+        [theme.breakpoints.only('sm')]: {
+          // prettier-ignore
+          clipPath: 'polygon(20px 0, 0 20px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
+        },
+        [theme.breakpoints.up('md')]: {
+          // minWidth: '200px',
+          // prettier-ignore
+          clipPath: 'polygon(40px 0, 0 40px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
+        }
       }
     }
   }
