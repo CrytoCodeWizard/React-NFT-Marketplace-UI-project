@@ -3,7 +3,6 @@ import React from 'react'
 import { Box } from '@mui/system'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material/styles'
-import pattern from './assets/pattern.png'
 import Cursor from './Cursor'
 import Shimmer from './Shimmer'
 
@@ -41,7 +40,7 @@ const Pattern: React.FC = () => {
             zIndex: 1,
             height: '100vh',
             width: '100%',
-            backgroundImage: `url(${pattern})`,
+            backgroundImage: `url(https://cdn.discordapp.com/attachments/420674357652750367/937447792551526461/pattern.png)`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
           }}
