@@ -15,7 +15,7 @@ export const EDGE_SIZE = {
   md: 160
 }
 
-const Frame: React.FC = () => {
+export const Frame: React.FC = () => {
   return (
     <Box className='frame'>
       <Outer />
@@ -25,5 +25,3 @@ const Frame: React.FC = () => {
     </Box>
   )
 }
-
-export default Frame
