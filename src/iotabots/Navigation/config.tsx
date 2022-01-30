@@ -1,3 +1,4 @@
+import React from 'react'
 export const PROFILE = <a href='/profile'>Profile</a>
 const BOTS = <a href='/bots'>Bots</a>
 const PROJECTS = <a href='/projects'>Projects</a>
