@@ -6,7 +6,7 @@ import Logo from '../Logo'
 import Menu from './Menu'
 import IdentityMenu from './IdentityMenu'
 import { MENU, MOBILE_MENU } from './config'
-import { Box } from 'components'
+import { Box } from '@mui/material'
 
 export interface NavigationProps {
   identity?: boolean
