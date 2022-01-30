@@ -42,7 +42,7 @@ const palette = {
     main: '#0FD698'
   },
   secondary: {
-    main: '#0FD698'
+    main: '#FEE437'
   },
   error: {
     main: '#f67367'

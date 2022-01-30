@@ -112,6 +112,8 @@ const useStyles = makeStyles((theme: Theme) => {
     },
     containedSecondary: {
       background: theme.palette.secondary.main,
+      color: theme.palette.background.paper,
+      borderColor: theme.palette.secondary.light,
       '&:hover': {
         background: theme.palette.secondary.light
       }
