@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Button, IconButtonProps } from '@mui/material'
 
-export const IconButton: React.FC<IconButtonProps> = (props) => {
+export const IconButtonFancy: React.FC<IconButtonProps> = (props) => {
   const { children, sx, onClick } = props
   return (
     <Button

@@ -2,7 +2,7 @@ import React from 'react'
 import { Menu } from '../../components'
 import { Box, MenuItem } from '@mui/material'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
-import { IconButton } from '../IconButton'
+import { IconButtonFancy } from '../IconButtonFancy'
 
 interface MenuProps {
   menu: JSX.Element[]
@@ -25,14 +25,14 @@ const MobileMenu: React.FC<MenuProps> = (props) => {
   return (
     <Box sx={{ display: { xs: 'block', md: 'none' } }}>
       <Box>
-        <IconButton
+        <IconButtonFancy
           aria-controls={open ? 'basic-menu' : undefined}
           aria-haspopup='true'
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
         >
           <MenuRoundedIcon />
-        </IconButton>
+        </IconButtonFancy>
       </Box>
       <Menu
         id={mobileMenuId}
