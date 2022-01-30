@@ -4,8 +4,8 @@ import { Web3Provider } from '@ethersproject/providers'
 import { Button } from '../components'
 // eslint-disable-next-line max-len
 import AccountBalanceWalletRoundedIcon from '@mui/icons-material/AccountBalanceWalletRounded'
-import { useEagerConnect, useInactiveListener } from 'web3/hooks/hooks'
-import { injected } from 'web3/hooks/connectors'
+import { useEagerConnect, useInactiveListener } from './hooks/hooks'
+import { injected } from './hooks/connectors'
 
 enum ConnectorNames {
   Injected = 'Connect'

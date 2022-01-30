@@ -1,8 +1,8 @@
 import React from 'react'
-import { Avatar } from '../../components'
 import { Box, BoxProps } from '@mui/material'
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
+import { Avatar } from '../../components'
 import { ConnectButton } from '../../web3/ConnectButton'
 
 export const IdentityMenu: React.FC<BoxProps> = (props) => {
