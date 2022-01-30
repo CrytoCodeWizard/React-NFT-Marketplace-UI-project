@@ -1,7 +1,6 @@
 import React from 'react'
 import { Typography as MuiTypography, TypographyProps } from '@mui/material'
 import makeStyles from '@mui/styles/makeStyles'
-import { Theme } from '../../../theme/types'
 
 export function Typography(props: TypographyProps): JSX.Element {
   const classes = useStyles()
@@ -15,16 +14,20 @@ export function Typography(props: TypographyProps): JSX.Element {
   )
 }
 
-const useStyles = makeStyles((theme: Theme) => {
+const useStyles = makeStyles(() => {
   return {
     root: {
       '&.MuiTypography-root': {
-        fontFamily: theme.typography.fontFamily
+        fontFamily: '"Inter", sans-serif'
       },
-      '&.MuiTypography-h1, &.MuiTypography-h2, &.MuiTypography-h3, &.MuiTypography-h4, &.MuiTypography-h5, &.MuiTypography-h6':
-        {
-          fontWeight: theme.typography.fontWeightBold
-        }
+      '&.MuiTypography-h1, &.MuiTypography-h2': {
+        fontFamily: '"Sarpanch", sans-serif',
+        fontWeight: 800
+      },
+      '&.MuiTypography-h3, &.MuiTypography-h4': {
+        fontFamily: '"Sarpanch", sans-serif',
+        fontWeight: 800
+      }
     }
   }
 })
