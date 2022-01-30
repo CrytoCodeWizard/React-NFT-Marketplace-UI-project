@@ -1,6 +1,6 @@
 {
   "name": "@iotabots/components",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,7 +36,8 @@
     "react-copy-to-clipboard": "^5.0.3",
     "react-scripts": "4.0.3",
     "react-syntax-highlighter": "^15.4.3",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "web3": "^1.6.1"
   },
   "peerDependencies": {
     "@emotion/react": "^11.6.0",

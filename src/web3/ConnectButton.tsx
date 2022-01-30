@@ -2,8 +2,10 @@ import React from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { Web3Provider } from '@ethersproject/providers'
 import { Button } from '../components'
-import { useEagerConnect, useInactiveListener } from './hooks/hooks'
-import { injected } from './hooks/connectors'
+// eslint-disable-next-line max-len
+import AccountBalanceWalletRoundedIcon from '@mui/icons-material/AccountBalanceWalletRounded'
+import { useEagerConnect, useInactiveListener } from 'web3/hooks/hooks'
+import { injected } from 'web3/hooks/connectors'
 
 enum ConnectorNames {
   Injected = 'Connect'
@@ -14,7 +16,7 @@ const connectorsByName: { [connectorName in ConnectorNames]: any } = {
   [ConnectorNames.Injected]: injected
 }
 
-const ConnectButton: React.FC = () => {
+export const ConnectButton: React.FC = () => {
   const context = useWeb3React<Web3Provider>()
   const { connector, activate, error } = context
 
@@ -35,21 +37,16 @@ const ConnectButton: React.FC = () => {
 
   return (
     <Button
-      disabled={disabled}
-      key='Connect'
       size='small'
+      color='secondary'
+      disabled={disabled}
       onClick={(): void => {
         setActivatingConnector(currentConnector)
         activate(connectorsByName.Connect)
       }}
+      startIcon={<AccountBalanceWalletRoundedIcon />}
     >
-      <div>
-        {activating && '⏳'}
-        {connected && '✅'}
-      </div>
-      Connect
+      {activating ? '...' : 'Connect'}
     </Button>
   )
 }
-
-export default ConnectButton

@@ -1,7 +1,7 @@
 import React from 'react'
 import { withDesign } from 'storybook-addon-designs'
 import { Story } from '@storybook/react'
-import ConnectButton from './ConnectButton'
+import { ConnectButton } from './ConnectButton'
 
 export default {
   title: 'web3/ConnectButton',
