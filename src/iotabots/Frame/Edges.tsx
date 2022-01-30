@@ -1,10 +1,10 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import edgeTr from './assets/edge-tr.svg'
-import edgeBr from './assets/edge-br.svg'
-import edgeBl from './assets/edge-bl.svg'
-import edgeTl from './assets/edge-tl.svg'
 import { EDGE_SIZE, WIDTH } from '.'
+import EdgeTr from './assets/EdgeTr'
+import EdgeBr from './assets/EdgeBr'
+import EdgeBl from './assets/EdgeBl'
+import EdgeTl from './assets/EdgeTl'
 
 const Edges: React.FC = () => {
   const distance = {
@@ -38,10 +38,10 @@ const Edges: React.FC = () => {
         }
       }}
     >
-      <img className='top-right' alt='3D Logo Animation' src={edgeTr} />
-      <img className='bottom-right' alt='3D Logo Animation' src={edgeBr} />
-      <img className='bottom-left' alt='3D Logo Animation' src={edgeBl} />
-      <img className='top-left' alt='3D Logo Animation' src={edgeTl} />
+      <EdgeTr />
+      <EdgeBr />
+      <EdgeBl />
+      <EdgeTl />
     </Box>
   )
 }
