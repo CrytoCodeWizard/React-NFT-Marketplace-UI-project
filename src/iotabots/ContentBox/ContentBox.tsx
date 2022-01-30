@@ -16,10 +16,6 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => {
   const { headline, text, image, children } = props
   const classes = useStyles()
 
-  React.useEffect(() => {
-    console.log('Peter Weinmann')
-  }, [])
-
   return (
     <>
       <Box className={classes.contentBoxWrapper}>
@@ -65,21 +61,21 @@ const useStyles = makeStyles((theme: Theme) => {
     },
     // use a top and bottom div for clipping, because of the overflow behavior
     header: {
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: 'rgba(0,0,0,0.5)',
       height: '40px',
       marginTop: '-20px',
       // prettier-ignore
       clipPath: 'polygon(80px 0, 0 80px, 0 100%, 100% 100%, 100% 100%, 100% 0)'
     },
     footer: {
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: 'rgba(0,0,0,0.5)',
       height: '40px',
       position: 'relative',
       // prettier-ignore
       clipPath: 'polygon(0 0, 0 100%, calc(100% - 40px) 100%, 100% calc(100% - 40px), 100% 0)'
     },
     body: {
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: 'rgba(0,0,0,0.5)',
       [theme.breakpoints.up('md')]: {
         display: 'flex',
         justifyContent: 'space-between'
@@ -127,7 +123,7 @@ const useStyles = makeStyles((theme: Theme) => {
         height: '60px',
         width: '60px',
         // add a lower left dropShadow on mobile to make it look like cropped
-        filter: `drop-shadow(-6px 6px 0px ${theme.palette.background.paper})`,
+        filter: `drop-shadow(-6px 6px 0px rgba(0,0,0,0.5))`,
         '& + $contentWrapper $contentHeadline': {
           maxWidth: 'calc(100% - 40px)'
         }
