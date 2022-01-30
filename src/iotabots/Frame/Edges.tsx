@@ -14,7 +14,7 @@ const Edges: React.FC = () => {
   return (
     <Box
       sx={{
-        img: {
+        svg: {
           position: 'fixed',
           zIndex: 9,
           width: { ...EDGE_SIZE },
