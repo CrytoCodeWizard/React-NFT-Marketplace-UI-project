@@ -22,7 +22,7 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
     <>
       <Box className={classes.timelineWrapper}>
         <Box className={classes.statusWrapper}>
-          <Box className={classes.statusCirle}></Box>
+          <Box className={classes.statusCircle}></Box>
           <Box className={classes.statusLine}></Box>
         </Box>
         <Box className={classes.cardWrapper}>
@@ -60,7 +60,7 @@ const useStyles = makeStyles<Theme, TimelineProps>((theme: Theme) => {
       position: 'relative'
     },
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-    statusCirle: (props) => {
+    statusCircle: (props) => {
       return {
         borderColor: theme.palette.primary.main,
         borderRadius: '20px',
@@ -80,7 +80,7 @@ const useStyles = makeStyles<Theme, TimelineProps>((theme: Theme) => {
       }
     },
     statusLine: {
-      background: theme.palette.text.secondary,
+      background: theme.palette.background.border,
       bottom: '0',
       left: '50%',
       position: 'absolute',
@@ -89,7 +89,7 @@ const useStyles = makeStyles<Theme, TimelineProps>((theme: Theme) => {
       width: '1px'
     },
     cardWrapper: {
-      background: theme.palette.text.secondary,
+      background: 'rgba(0,0,0,0.5)',
       color: theme.palette.common.white,
       flexGrow: 1,
       padding: '20px',
@@ -100,7 +100,7 @@ const useStyles = makeStyles<Theme, TimelineProps>((theme: Theme) => {
       marginBottom: '20px'
     },
     cardText: {
-      color: '#fff'
+      color: theme.palette.common.white
     }
   }
 })

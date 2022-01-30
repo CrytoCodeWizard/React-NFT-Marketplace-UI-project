@@ -27,6 +27,10 @@ const useStyles = makeStyles(() => {
       '&.MuiTypography-h3, &.MuiTypography-h4': {
         fontFamily: '"Sarpanch", sans-serif',
         fontWeight: 800
+      },
+      '&.MuiTypography-h5, &.MuiTypography-h6': {
+        fontFamily: '"Sarpanch", sans-serif',
+        fontWeight: 800
       }
     }
   }

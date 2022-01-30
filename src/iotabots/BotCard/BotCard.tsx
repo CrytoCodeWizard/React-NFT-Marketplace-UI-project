@@ -117,8 +117,8 @@ const useStyles = makeStyles<Theme, BotCardProps>((theme: Theme) => {
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     textWrapper: (props) => {
       return {
-        backgroundColor: theme.palette.background.paper,
-        color: theme.palette.text.secondary,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        color: theme.palette.common.white,
         display: 'flex',
         flexDirection: 'column',
         padding: '5%',
