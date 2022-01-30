@@ -42,6 +42,9 @@ const useStyles = makeStyles((theme: Theme) => {
       borderRadius: theme.radius.button,
       background: theme.palette.background.paper,
       boxShadow: 'none',
+      fontFamily: '"Sarpanch", sans-serif',
+      fontWeight: 'bold',
+      textTransform: 'none',
       '&:hover': {
         background: theme.shadows[0]
       }
@@ -108,9 +111,9 @@ const useStyles = makeStyles((theme: Theme) => {
       }
     },
     containedSecondary: {
-      background: theme.palette.background.light,
+      background: theme.palette.secondary.main,
       '&:hover': {
-        background: theme.palette.background.medium
+        background: theme.palette.secondary.light
       }
     },
     disabled: {

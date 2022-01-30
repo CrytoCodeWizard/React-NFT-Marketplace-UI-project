@@ -29,8 +29,8 @@ const palette = {
     gradient: GRADIENT_LIGHT
   },
   text: {
-    primary: grey[900],
-    secondary: grey[700],
+    primary: grey[1000],
+    secondary: grey[800],
     disabled: grey[500],
     hint: grey[300],
     divider: grey[300]

@@ -30,7 +30,7 @@ const palette = {
   },
   text: {
     primary: '#ffffff',
-    secondary: grey[300],
+    secondary: grey[100],
     disabled: grey[500],
     hint: grey[700],
     divider: grey[700]
