@@ -19,22 +19,30 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
   }
 
   return (
-    <>
-      <Box className={classes.timelineWrapper}>
-        <Box className={classes.statusWrapper}>
-          <Box className={classes.statusCircle}></Box>
-          <Box className={classes.statusLine}></Box>
-        </Box>
-        <Box className={classes.cardWrapper}>
-          <Box className={classes.cardHeadline}>
-            <Typography variant='h6'>{title}</Typography>
-          </Box>
-          <Box className={classes.cardText}>
-            {children && <Typography>{children}</Typography>}
-          </Box>
+    <Box className={classes.timelineWrapper}>
+      <Box className={classes.statusWrapper}>
+        <Box className={classes.statusCircle}></Box>
+        <Box className={classes.statusLine}></Box>
+      </Box>
+      <Box
+        sx={{
+          background: 'rgba(0,0,0,0.5)',
+          color: 'common.white',
+          flexGrow: 1,
+          backdropFilter: 'blur(8px)',
+          padding: 6,
+          // prettier-ignore
+          clipPath: 'polygon(20px 0, 0 20px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
+        }}
+      >
+        <Typography variant='h6'>{title}</Typography>
+        <Box>
+          {children && (
+            <Typography color='rgba(255,255,255,0.66)'>{children}</Typography>
+          )}
         </Box>
       </Box>
-    </>
+    </Box>
   )
 }
 
@@ -87,20 +95,6 @@ const useStyles = makeStyles<Theme, TimelineProps>((theme: Theme) => {
       top: '30px',
       transform: 'translateX(-50%)',
       width: '1px'
-    },
-    cardWrapper: {
-      background: 'rgba(0,0,0,0.5)',
-      color: theme.palette.common.white,
-      flexGrow: 1,
-      padding: '20px',
-      // prettier-ignore
-      clipPath: 'polygon(20px 0, 0 20px, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 20px), 100% 0)'
-    },
-    cardHeadline: {
-      marginBottom: '20px'
-    },
-    cardText: {
-      color: theme.palette.common.white
     }
   }
 })
