@@ -11,12 +11,19 @@ import { Box } from '@mui/material'
 export interface NavigationProps {
   identity?: boolean
   logo?: JSX.Element
+  onClickProfile?: () => void
   menu: JSX.Element[]
   mobileMenu: JSX.Element[]
 }
 
 export const Navigation: React.FC<NavigationProps> = (props) => {
-  const { identity = true, menu = MENU, mobileMenu = MOBILE_MENU, logo } = props
+  const {
+    identity = true,
+    menu = MENU,
+    mobileMenu = MOBILE_MENU,
+    logo,
+    onClickProfile
+  } = props
   return (
     <AppBar
       sx={{
@@ -46,7 +53,7 @@ export const Navigation: React.FC<NavigationProps> = (props) => {
       >
         {logo || <Logo />}
         <Menu menu={menu} />
-        {identity ? <IdentityMenu /> : <Box />}
+        {identity ? <IdentityMenu onClick={onClickProfile} /> : <Box />}
         <MobileMenu menu={mobileMenu} />
       </Toolbar>
     </AppBar>
