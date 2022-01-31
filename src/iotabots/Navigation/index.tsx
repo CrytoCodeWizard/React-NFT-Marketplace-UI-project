@@ -10,12 +10,13 @@ import { Box } from '@mui/material'
 
 export interface NavigationProps {
   identity?: boolean
+  logo?: JSX.Element
   menu: JSX.Element[]
   mobileMenu: JSX.Element[]
 }
 
 export const Navigation: React.FC<NavigationProps> = (props) => {
-  const { identity = true, menu = MENU, mobileMenu = MOBILE_MENU } = props
+  const { identity = true, menu = MENU, mobileMenu = MOBILE_MENU, logo } = props
   return (
     <AppBar
       sx={{
@@ -43,7 +44,7 @@ export const Navigation: React.FC<NavigationProps> = (props) => {
           justifyContent: 'space-between'
         }}
       >
-        <Logo />
+        {logo || <Logo />}
         <Menu menu={menu} />
         {identity ? <IdentityMenu /> : <Box />}
         <MobileMenu menu={mobileMenu} />
