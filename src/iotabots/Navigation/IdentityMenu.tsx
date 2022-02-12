@@ -2,35 +2,18 @@ import React from 'react'
 import { Box, BoxProps } from '@mui/material'
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
-import { Avatar } from '../../components'
 import { ConnectButton } from '../../web3/ConnectButton'
+import ProfileImage from './ProfileImage'
 
-const ProfileImage: React.FC = (id) => {
-  if (id > 0) {
-    const url = `https://assets.iotabots.io/compressed/${id}.png`
-    return (
-      <div>
-        <Avatar alt='IOTABOTS' src={url} sx={{ width: 40, height: 40 }} />
-      </div>
-    )
-  } else {
-    return (
-      <div>
-        <Avatar
-          alt='IOTABOT #1'
-          src='https://assets.iotabots.io/compressed/1.png'
-          sx={{ width: 40, height: 40 }}
-        />
-      </div>
-    )
-  }
+interface WhitelistItem {
+  id: string
+  address: string
 }
 
 export const IdentityMenu: React.FC<BoxProps> = (props) => {
+  const { account } = useWeb3React<Web3Provider>()
+  const [bots, setBots] = React.useState<number[]>([])
   const { onClick } = props
-  const context = useWeb3React<Web3Provider>()
-  const { account } = context
-  const [bots, setBots] = React.useState<Array<unkown>>([])
 
   const load = async (): Promise<boolean> => {
     console.log('Hello')
@@ -40,7 +23,7 @@ export const IdentityMenu: React.FC<BoxProps> = (props) => {
     const res = await fetch(URL)
     const data = await res.text()
 
-    const airdropAddresses: Array<unknown> = []
+    const airdropAddresses: WhitelistItem[] = []
 
     if (!data) {
       return false
@@ -60,10 +43,10 @@ export const IdentityMenu: React.FC<BoxProps> = (props) => {
     console.log('airdropAddresses', airdropAddresses)
     console.log('account', account)
 
-    const iotabots = []
+    const iotabots: number[] = []
     airdropAddresses.forEach((obj) => {
       if (obj.address === account) {
-        iotabots.push(obj.id)
+        iotabots.push(Number(obj.id))
       }
     })
     setBots(iotabots)
@@ -81,7 +64,7 @@ export const IdentityMenu: React.FC<BoxProps> = (props) => {
       {account ? (
         <Box sx={{ cursor: 'pointer' }} onClick={onClick}>
           <ProfileImage id={bots[0]} />
-          Account{account}
+          {/* Account{account} */}
         </Box>
       ) : (
         <ConnectButton />

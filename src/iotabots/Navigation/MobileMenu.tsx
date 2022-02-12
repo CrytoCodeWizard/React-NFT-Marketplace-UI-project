@@ -1,11 +1,12 @@
 import React from 'react'
 import { Menu } from '../../components'
-import { Box, MenuItem } from '@mui/material'
+import { Box } from '@mui/material'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import { IconButtonFancy } from '../IconButtonFancy'
+import MenuItem, { MenuItemProps } from './MenuItem'
 
 interface MenuProps {
-  menu: JSX.Element[]
+  menu: MenuItemProps[]
 }
 
 const MobileMenu: React.FC<MenuProps> = (props) => {
@@ -61,19 +62,8 @@ const MobileMenu: React.FC<MenuProps> = (props) => {
       >
         {menu.map((item) => {
           return (
-            <MenuItem
-              sx={{
-                p: 0,
-                width: '100%',
-                '& .MuiBox-root': {
-                  borderRadius: '8px',
-                  overflow: 'hidden',
-                  width: '100%'
-                }
-              }}
-              onClick={handleClose}
-            >
-              {item}
+            <MenuItem {...item} onClick={handleClose}>
+              {item.label}
             </MenuItem>
           )
         })}

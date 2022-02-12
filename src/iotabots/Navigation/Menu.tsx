@@ -1,8 +1,9 @@
 import React from 'react'
 import { Box } from '@mui/material'
+import MenuItem, { MenuItemProps } from './MenuItem'
 
 interface MenuProps {
-  menu: JSX.Element[]
+  menu: MenuItemProps[]
 }
 
 const Menu: React.FC<MenuProps> = (props) => {
@@ -33,7 +34,7 @@ const Menu: React.FC<MenuProps> = (props) => {
         }}
       >
         {menu.map((item) => {
-          return item
+          return <MenuItem {...item} />
         })}
       </Box>
     </Box>
