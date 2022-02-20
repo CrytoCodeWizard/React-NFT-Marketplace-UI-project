@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Button, IconButtonProps } from '@mui/material'
 
 export const IconButtonFancy: React.FC<IconButtonProps> = (props) => {
-  const { children, sx, onClick } = props
+  const { children, onClick } = props
   return (
     <Button
       size='small'
@@ -10,8 +10,7 @@ export const IconButtonFancy: React.FC<IconButtonProps> = (props) => {
       color='primary'
       onClick={onClick}
       sx={{
-        ...sx,
-        '&.MuiButton-containedPrimary': {
+        '&.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary': {
           borderRadius: '50px',
           maxWidth: 'auto',
           minWidth: 'auto',
@@ -20,7 +19,7 @@ export const IconButtonFancy: React.FC<IconButtonProps> = (props) => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          bgcolor: 'background.paper',
+          bgcolor: 'black !important',
           borderWidth: 1,
           borderStyle: 'solid',
           borderColor: 'rgba(0,0,0,0.5)',
