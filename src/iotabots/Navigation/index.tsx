@@ -7,13 +7,14 @@ import Menu from './Menu'
 import IdentityMenu from './IdentityMenu'
 import { MENU, MOBILE_MENU } from './config'
 import { Box } from '@mui/material'
+import { MenuItemProps } from './MenuItem'
 
 export interface NavigationProps {
   identity?: boolean
   logo?: JSX.Element
   onClickProfile?: () => void
-  menu: JSX.Element[]
-  mobileMenu: JSX.Element[]
+  menu: MenuItemProps[]
+  mobileMenu: MenuItemProps[]
 }
 
 export const Navigation: React.FC<NavigationProps> = (props) => {

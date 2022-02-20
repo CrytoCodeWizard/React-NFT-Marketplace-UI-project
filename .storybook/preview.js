@@ -1,10 +1,11 @@
 import { theme as darkTheme } from '../src/theme/dark'
 import { theme as lightTheme } from '../src/theme/light'
-import { StyledEngineProvider } from '@mui/material/styles'
 import { ThemeProvider } from '../src/theme/ThemeProvider'
 import IotaWeb3Provider from '../src/web3/IotaWeb3Provider'
 import { addDecorator } from '@storybook/react'
 import { withThemes } from '@react-theming/storybook-addon'
+import { Box } from '../src/components/layout/Box/Box'
+import { CssBaseline } from '@mui/material'
 
 export const parameters = {
   controls: {
@@ -18,21 +19,30 @@ export const parameters = {
 const providerFn = ({ theme, children }) => {
   return (
     <IotaWeb3Provider>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={theme}>{children}</ThemeProvider>
-      </StyledEngineProvider>
+      <ThemeProvider theme={theme}>
+        <Box
+          sx={{
+            minHeight: '100vh',
+            bgcolor: 'background.paper',
+            p: 4
+          }}
+        >
+          {children}
+          <CssBaseline />
+        </Box>
+      </ThemeProvider>
     </IotaWeb3Provider>
   )
 }
 
-export const onThemeSwitch = context => {
+export const onThemeSwitch = (context) => {
   const parameters = {
-    backgrounds: null,
-  };
+    backgrounds: null
+  }
   return {
-    parameters,
-  };
-};
+    parameters
+  }
+}
 
 addDecorator(
   withThemes(null, [darkTheme, lightTheme], {

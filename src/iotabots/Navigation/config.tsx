@@ -1,8 +1,20 @@
-import React from 'react'
-export const PROFILE = <a href='/profile'>Profile</a>
-const BOTS = <a href='/bots'>Bots</a>
-const PROJECTS = <a href='/projects'>Projects</a>
-const FAQ = <a href='/faq'>FAQ</a>
+export const PROFILE = {
+  label: 'Profile',
+  href: '/profile'
+}
+export const BOTS = {
+  label: 'Bots',
+  href: '/bots',
+  active: true
+}
+export const PROJECTS = {
+  label: 'Projects',
+  href: '/projects'
+}
+export const FAQ = {
+  label: 'FAQ',
+  href: '/faq'
+}
 
 export const MENU = [BOTS, PROJECTS, FAQ]
 
