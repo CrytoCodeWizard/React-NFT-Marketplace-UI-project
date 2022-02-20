@@ -1,4 +1,4 @@
-import { Avatar } from 'components'
+import { Avatar } from '../../components'
 import React from 'react'
 
 interface ProfileImageType {
