@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
       </Typography>
       <Box display='flex' sx={{ '& a': { cursor: 'pointer' } }}>
         <Link
-          href='https://discord.gg/kmvh63ENKX'
+          href='https://discord.gg/iotabots'
           target='_blank'
           rel='noreferrer'
           className='link decent'
