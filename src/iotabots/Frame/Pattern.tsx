@@ -3,7 +3,7 @@ import React from 'react'
 import { Box } from '@mui/system'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material/styles'
-import Cursor from './Cursor'
+// import Cursor from './Cursor'
 import Shimmer from './Shimmer'
 
 const Pattern: React.FC = () => {
@@ -17,6 +17,7 @@ const Pattern: React.FC = () => {
       return setPosition({ x: e.clientX, y: e.clientY })
     }
     window.addEventListener('mousemove', setFromEvent)
+    console.log('addEventListener')
     return (): void => {
       window.removeEventListener('mousemove', setFromEvent)
     }
@@ -47,7 +48,7 @@ const Pattern: React.FC = () => {
         />
         {matches && <Shimmer position={position} />}
       </Box>
-      {matches && <Cursor position={position} />}
+      {/* {matches && <Cursor position={position} />} */}
     </>
   )
 }
