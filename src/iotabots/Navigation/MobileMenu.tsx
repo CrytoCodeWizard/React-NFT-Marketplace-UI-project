@@ -61,11 +61,7 @@ const MobileMenu: React.FC<MenuProps> = (props) => {
         }}
       >
         {menu.map((item) => {
-          return (
-            <MenuItem {...item} onClick={handleClose}>
-              {item.label}
-            </MenuItem>
-          )
+          return <MenuItem {...item}>{item.label}</MenuItem>
         })}
       </Menu>
     </Box>
