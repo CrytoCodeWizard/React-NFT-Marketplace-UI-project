@@ -70,8 +70,8 @@ const FONT_FAMILY = 'Inter'
 const TYPE_SPACING = [10, 12, 14, 16, 20, 24, 32, 40, 48, 62, 124]
 
 const BASE_HEADLINE_STYLES = {
-  fontFamily: '"Sarpanch", sans-serif',
-  fontWeight: 600,
+  fontFamily: 'Roboto Serif',
+  fontWeight: 800,
   lineHeight: 1.2,
   letterSpacing: '0em'
 }
@@ -82,7 +82,7 @@ const BASE_BODY_STYLES = {
   letterSpacing: '0em'
 }
 const BASE_BUTTON_STYLES = {
-  fontFamily: FONT_FAMILY,
+  fontFamily: 'Roboto Serif',
   fontWeight: 600,
   lineHeight: 1,
   letterSpacing: '0em'
