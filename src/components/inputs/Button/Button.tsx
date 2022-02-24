@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) => {
       borderRadius: theme.radius.button,
       background: theme.palette.background.paper,
       boxShadow: 'none',
-      fontFamily: '"Sarpanch", sans-serif',
+      fontFamily: '"Roboto Serif", sans-serif',
       fontWeight: 'bold',
       textTransform: 'none',
       '&:hover': {

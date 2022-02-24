@@ -32,7 +32,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
       <Typography
         sx={{
           textAlign: 'center',
-          fontFamily: 'Sarpanch',
+          fontFamily: 'Roboto Serif',
           fontSize: 18,
           fontWeight: '600'
         }}

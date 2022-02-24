@@ -21,15 +21,15 @@ const useStyles = makeStyles(() => {
         fontFamily: '"Inter", sans-serif'
       },
       '&.MuiTypography-h1, &.MuiTypography-h2': {
-        fontFamily: '"Sarpanch", sans-serif',
+        fontFamily: '"Roboto Serif", sans-serif',
         fontWeight: 800
       },
       '&.MuiTypography-h3, &.MuiTypography-h4': {
-        fontFamily: '"Sarpanch", sans-serif',
+        fontFamily: '"Roboto Serif", sans-serif',
         fontWeight: 800
       },
       '&.MuiTypography-h5, &.MuiTypography-h6': {
-        fontFamily: '"Sarpanch", sans-serif',
+        fontFamily: '"Roboto Serif", sans-serif',
         fontWeight: 800
       }
     }
