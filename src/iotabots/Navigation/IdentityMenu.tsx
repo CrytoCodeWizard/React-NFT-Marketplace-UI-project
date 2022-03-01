@@ -16,7 +16,6 @@ export const IdentityMenu: React.FC<BoxProps> = (props) => {
   const { onClick } = props
 
   const load = async (): Promise<boolean> => {
-    console.log('Hello')
     const URL =
       'https://raw.githubusercontent.com/iotabots/save-the-bots/main/all.txt'
 
@@ -40,8 +39,7 @@ export const IdentityMenu: React.FC<BoxProps> = (props) => {
       airdropAddresses.push(obj)
     }
 
-    console.log('airdropAddresses', airdropAddresses)
-    console.log('account', account)
+    console.log('NFT Components: IdentityMenu.tsx, account', account)
 
     const iotabots: number[] = []
     airdropAddresses.forEach((obj) => {
@@ -50,13 +48,11 @@ export const IdentityMenu: React.FC<BoxProps> = (props) => {
       }
     })
     setBots(iotabots)
-    console.log('iotabots', iotabots)
     return true
   }
 
   React.useEffect(() => {
     load()
-    console.log('bots', bots)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account])
 
@@ -65,7 +61,6 @@ export const IdentityMenu: React.FC<BoxProps> = (props) => {
       {account ? (
         <Box sx={{ cursor: 'pointer' }} onClick={onClick}>
           <ProfileImage id={bots[0]} />
-          {/* Account{account} */}
         </Box>
       ) : (
         <ConnectButton />
