@@ -34,7 +34,7 @@ const Menu: React.FC<MenuProps> = (props) => {
         }}
       >
         {menu.map((item) => {
-          return <MenuItem {...item} />
+          return <MenuItem {...item} key={item.label} />
         })}
       </Box>
     </Box>
