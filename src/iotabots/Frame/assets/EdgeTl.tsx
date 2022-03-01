@@ -17,8 +17,8 @@ const EdgeTl: React.FC = () => {
       <path
         d='M125.607 27.844L127.315 26.1369L124.9 26.1369L29.0154 26.1369L28.0154 26.1369L28.0154 27.1369L28.0154 124.016L28.0154 126.43L29.7225 124.723L38.2225 116.223L38.5154 115.93L38.5154 115.516L38.5154 36.5219L116.515 36.5219L116.93 36.5219L117.222 36.229L125.607 27.844Z'
         stroke='black'
-        stroke-opacity='0.8'
-        stroke-width='2'
+        strokeOpacity='0.8'
+        strokeWidth='2'
       />
       <path
         d='M32.4237 132.608L6.01563 159.016L6.01562 5.98425L157.016 5.98425L133.993 29.0067L32.4237 29.0067L32.4237 132.608Z'
@@ -27,8 +27,8 @@ const EdgeTl: React.FC = () => {
       <path
         d='M5.01563 159.016V161.43L6.72273 159.723L33.1308 133.315L33.4237 133.022V132.608L33.4237 30.0067L133.993 30.0067H134.407L134.7 29.7138L157.723 6.69136L159.43 4.98425L157.016 4.98425L6.01562 4.98425H5.01562V5.98425L5.01563 159.016Z'
         stroke='black'
-        stroke-opacity='0.8'
-        stroke-width='2'
+        strokeOpacity='0.8'
+        strokeWidth='2'
       />
       <g filter='url(#filter0_d_80_1366)'>
         <path
@@ -68,8 +68,8 @@ const EdgeTl: React.FC = () => {
       </g>
       <g filter='url(#filter6_d_80_1366)'>
         <path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule='evenodd'
+          clipRule='evenodd'
           d='M59.0156 17.0155C59.0156 18.1201 58.1202 19.0155 57.0156 19.0155C56.0837 19.0155 55.3007 18.3781 55.0786 17.5155L23.0164 17.5155L23.0093 17.5156C23.0027 17.5157 22.9915 17.5159 22.9761 17.5164C22.9454 17.5175 22.898 17.5196 22.8364 17.524C22.713 17.5328 22.5334 17.5507 22.3166 17.5868C21.8806 17.6595 21.3069 17.8039 20.7392 18.0877C20.1735 18.3706 19.6231 18.787 19.2129 19.4022C18.8048 20.0144 18.5156 20.853 18.5156 22.0155L18.5156 56.0785C19.3782 56.3005 20.0156 57.0836 20.0156 58.0155C20.0156 59.1201 19.1202 60.0155 18.0156 60.0155C16.9111 60.0155 16.0156 59.1201 16.0156 58.0155C16.0156 57.0836 16.653 56.3005 17.5156 56.0785L17.5156 22.0155C17.5156 20.678 17.8514 19.6417 18.3808 18.8475C18.9082 18.0565 19.6077 17.5354 20.292 17.1933C20.9744 16.8521 21.6507 16.684 22.1522 16.6004C22.4041 16.5584 22.6151 16.5373 22.7652 16.5265C22.8402 16.5212 22.9003 16.5184 22.9428 16.517C22.9641 16.5163 22.981 16.5159 22.9932 16.5157L23.008 16.5155L23.0127 16.5155L23.0144 16.5155C23.0147 16.5155 23.0156 16.5155 23.0156 17.0155V16.5155L55.0786 16.5155C55.3007 15.6529 56.0837 15.0155 57.0156 15.0155C58.1202 15.0155 59.0156 15.9109 59.0156 17.0155Z'
           fill='#2EFFBF'
         />
@@ -82,9 +82,9 @@ const EdgeTl: React.FC = () => {
           width='22.8341'
           height='35.8341'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
+          colorInterpolationFilters='sRGB'
         >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'
@@ -117,9 +117,9 @@ const EdgeTl: React.FC = () => {
           width='35.8878'
           height='23.0224'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
+          colorInterpolationFilters='sRGB'
         >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'
@@ -152,9 +152,9 @@ const EdgeTl: React.FC = () => {
           width='22.8341'
           height='34.8341'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
+          colorInterpolationFilters='sRGB'
         >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'
@@ -187,9 +187,9 @@ const EdgeTl: React.FC = () => {
           width='35.8878'
           height='23.0224'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
+          colorInterpolationFilters='sRGB'
         >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'
@@ -222,9 +222,9 @@ const EdgeTl: React.FC = () => {
           width='22.8341'
           height='35.8341'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
+          colorInterpolationFilters='sRGB'
         >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'
@@ -257,9 +257,9 @@ const EdgeTl: React.FC = () => {
           width='35.8878'
           height='23.0224'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
+          colorInterpolationFilters='sRGB'
         >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'
@@ -292,9 +292,9 @@ const EdgeTl: React.FC = () => {
           width='53.8341'
           height='55.8341'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
+          colorInterpolationFilters='sRGB'
         >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'
