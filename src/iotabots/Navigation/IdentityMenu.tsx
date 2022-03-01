@@ -57,6 +57,7 @@ export const IdentityMenu: React.FC<BoxProps> = (props) => {
   React.useEffect(() => {
     load()
     console.log('bots', bots)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account])
 
   return (
