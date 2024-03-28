@@ -87,14 +87,6 @@ If a component from official MUI docs is not included in `@iotabots/components`,
 ### Storybook
 On top of Material UI's base ui components we have custom shared UI components for the iotabots team and community. These can be found in Storybook [Live Preview Page](https://iotabots.github.io/nft-ui-components/?path=/story/example-introduction--page)
 
-## 🎯 Planned Milestones
-- [x] Include [MUI](https://mui.com/)
-- [x] Publish on npmjs.com: [@iotabots/components](https://www.npmjs.com/package/@iotabots/components)
-- [ ] Website Components
-- [x] [web3-react](https://github.com/NoahZinsmeister/web3-react) integration
-- [ ] Marketplace Components
-- [ ] Game Center Components
-
 ## ✅ Missing Components
 All components can be discovered on the [Live Preview Page](https://iotabots.github.io/nft-ui-components/?path=/story/example-backgroundvideo--default). The ones below will be added and documented in storybook.
 
