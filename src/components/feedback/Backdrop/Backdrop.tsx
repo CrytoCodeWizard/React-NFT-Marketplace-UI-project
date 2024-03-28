@@ -6,6 +6,7 @@ import {
 import makeStyles from '@mui/styles/makeStyles'
 import { Theme } from '../../../theme/types'
 
+// Back drop component to go behind the modal
 export function Backdrop(props: MuiBackdropProps): JSX.Element {
   const classes = useStyles()
   return (
